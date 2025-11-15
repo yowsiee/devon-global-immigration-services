@@ -1,0 +1,88 @@
+{
+    "web_development": {
+        "key": "web_development",
+        "icon": "<\/>",
+        "iconColor": "icon-purple",
+        "title": "Web Development",
+        "description": "Custom websites, and web applications built with modern technologies. We create responsive, SEO-optimized solutions that drive business growth.",
+        "gradient": "gradient-purple",
+        "tags": [
+            "Responsive Design",
+            "SEO Optimization",
+            "E-commerce"
+        ],
+        "buttonColor": "btn-purple",
+        "visible": true,
+        "created_at": "2024-01-01",
+        "updated_at": "2024-01-01"
+    },
+    "app_development": {
+        "key": "app_development",
+        "icon": "\ud83d\udcf1",
+        "iconColor": "icon-orange",
+        "title": "App Development",
+        "description": "Native and cross-platform mobile applications for iOS and Android. We build intuitive, high-performance apps that users love.",
+        "gradient": "gradient-orange-pink",
+        "tags": [
+            "Mobile Apps",
+            "Cross-Platform",
+            "Native Development"
+        ],
+        "buttonColor": "btn-red",
+        "visible": true,
+        "created_at": "2024-01-01",
+        "updated_at": "2024-01-01"
+    },
+    "api_development": {
+        "key": "api_development",
+        "icon": "\ud83d\udd0c",
+        "iconColor": "icon-blue",
+        "title": "API Development & Integrations",
+        "description": "Robust RESTful APIs, system integrations, and data pipelines. Connect your applications seamlessly with secure, scalable solutions.",
+        "gradient": "gradient-blue",
+        "tags": [
+            "RESTful APIs",
+            "System Integration",
+            "Security"
+        ],
+        "buttonColor": "btn-blue",
+        "visible": true,
+        "created_at": "2024-01-01",
+        "updated_at": "2024-01-01"
+    },
+    "business_automation": {
+        "key": "business_automation",
+        "icon": "\u2699\ufe0f",
+        "iconColor": "icon-pink",
+        "title": "Business Process Automation",
+        "description": "Streamline your operations with PowerApps, LogicApps, and custom workflow solutions. Reduce manual tasks and increase efficiency.",
+        "gradient": "gradient-pink",
+        "tags": [
+            "PowerApps",
+            "LogicApps",
+            "Workflows"
+        ],
+        "buttonColor": "btn-pink",
+        "visible": true,
+        "created_at": "2024-01-01",
+        "updated_at": "2024-01-01"
+    },
+    "application_support_maintenance": {
+        "key": "application_support_maintenance",
+        "icon": "\ud83d\udee0",
+        "iconColor": "icon-green",
+        "title": "Application Support & Maintenance",
+        "description": "Comprehensive support and maintenance services to keep your applications running smoothly. Website care plans, ongoing support, managed web services, and system administration.",
+        "gradient": "gradient-green",
+        "tags": [
+            "Website Care Plans",
+            "Ongoing Support",
+            "Managed Services",
+            "System Administration"
+        ],
+        "buttonColor": "btn-blue",
+        "visible": true,
+        "created_at": "2024-01-01",
+        "updated_at": "2024-01-01"
+    }
+}

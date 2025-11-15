@@ -1,0 +1,72 @@
+# PHP
+*.log
+*.cache
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+*.iml
+
+# Environment and config files (if they contain sensitive data)
+# Uncomment if config.php contains sensitive information
+# application/config/config.php
+
+# Composer
+/vendor/
+composer.phar
+composer.lock
+
+# Node modules (if you add npm packages later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build files
+/dist/
+/build/
+
+# Temporary files
+*.bak
+*.backup
+*.old
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# XAMPP specific
+xampp/
+
+# Logs
+logs/
+*.log
+
+# Data files (optional - uncomment if you don't want to track JSON data)
+# application/data/*.json
+
+# Cache
+cache/
+*.cache
+
+# Session files
+sessions/
+
+# Uploads (if you have user uploads)
+# uploads/
+# public/uploads/
+

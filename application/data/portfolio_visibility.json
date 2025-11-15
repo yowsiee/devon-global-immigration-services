@@ -1,0 +1,13 @@
+{
+    "website_design_development": true,
+    "process_automation_solutions": true,
+    "api_integrations_data_pipelines": false,
+    "business_intelligence_reporting": false,
+    "modern_business_website": false,
+    "client_onboarding_automation": false,
+    "operations_dashboard": false,
+    "data_science_portfolio": false,
+    "website_design_projects": false,
+    "process_automation_projects": false,
+    "business_intelligence_projects": false
+}

@@ -1,0 +1,17 @@
+# robots.txt for Dev's Domain
+
+User-agent: *
+Allow: /
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /application/
+Disallow: /system/
+Disallow: /*.json$
+Disallow: /*?*
+
+# Sitemap location (update with your actual domain)
+Sitemap: http://localhost/lightweight/sitemap.xml
+
+# Crawl-delay (optional)
+Crawl-delay: 1
+
