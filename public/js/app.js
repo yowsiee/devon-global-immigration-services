@@ -1,5 +1,15 @@
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
+    // Ensure code snippets stay visible
+    const codeSnippets = document.querySelectorAll('.hero-graphics .code-snippet');
+    codeSnippets.forEach((snippet, index) => {
+        // Force visibility after animation delay
+        setTimeout(() => {
+            snippet.style.opacity = '1';
+            snippet.style.visibility = 'visible';
+        }, 2000 + (index * 200)); // 2s + delay per snippet
+    });
+    
     // Dynamic Active Navigation Detection
     function setActiveNavLink() {
         const currentPath = window.location.pathname;

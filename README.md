@@ -1,87 +1,64 @@
-# Dev's Domain - Lightweight PHP Framework Website
+# Devon Global Immigration Services
 
-A professional IT solutions website built with a custom lightweight PHP framework.
-
-## Features
-
-- **Modern Dashboard**: Full-featured admin dashboard for managing content
-- **Portfolio Management**: Manage featured projects, categories, and GitHub portfolio
-- **Services Management**: Dynamic service listings with visibility controls
-- **Settings Page**: Control section visibility on portfolio page
-- **Responsive Design**: Mobile-first responsive design
-- **SEO Optimized**: Built-in SEO features and meta tags
-- **Security**: CSRF protection, XSS prevention, secure file uploads
-
-## Requirements
-
-- PHP 7.4 or higher
-- Apache with mod_rewrite enabled
-- MySQL (optional, currently using JSON files for data storage)
-
-## Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd lightweight
-```
-
-2. Configure the application:
-   - Edit `application/config/config.php` and set your `base_url`
-   - Update database credentials if using MySQL
-
-3. Set up Apache:
-   - Point your document root to the `public` directory
-   - Ensure `.htaccess` is enabled
-
-4. Access the site:
-   - Visit `http://localhost/lightweight/public/`
-   - Admin login: `admin@devsdomain.com` / `admin123`
+A professional website for Devon Global Immigration Services, providing immigration services to Canada and the United States.
 
 ## Project Structure
 
+This is a PHP-based website built on the Lightweight framework.
+
+## Features
+
+- **Landing Page**: Main homepage showcasing immigration services
+- **Three Service Pages**:
+  - Live, Work, Study in Canada
+  - Temporary Visitor Visa
+  - Work in USA
+- **Contact Page**: Free consultation booking and inquiry form
+- **About Page**: Company information and values
+
+## Installation
+
+1. Place the project in your web server directory (e.g., `htdocs/lightweight-backup`)
+2. Ensure PHP 7.4+ is installed
+3. Configure the base URL in `application/config/config.php`
+4. Access the site via your web server
+
+## Configuration
+
+Update the base URL in `application/config/config.php`:
+```php
+'base_url'  => 'http://localhost/lightweight-backup/public'
 ```
-lightweight/
-├── application/
-│   ├── config/          # Configuration files
-│   ├── controllers/     # MVC Controllers
-│   ├── data/            # JSON data files
-│   ├── models/          # MVC Models
-│   └── views/           # View templates
-├── public/              # Public web root
-│   ├── css/             # Stylesheets
-│   ├── js/              # JavaScript files
-│   ├── images/          # Images
-│   └── index.php        # Entry point
-└── system/              # Framework core
-    ├── core/            # Core system files
-    ├── helpers/         # Helper functions
-    └── libraries/       # Framework libraries
-```
 
-## Dashboard Features
+## Services
 
-- **Projects Management**: Add, edit, delete, and toggle visibility of projects
-- **Portfolio Management**: Manage portfolio items (categories, featured projects, GitHub repos)
-- **Services Management**: Control service listings
-- **Settings**: Configure section visibility on portfolio page
+### Live, Work, Study in Canada
+- Study Permits
+- Work Permits
+- Permanent Residency
+- Express Entry
 
-## Default Credentials
+### Temporary Visitor Visa
+- Tourist Visa
+- Family Visit Visa
+- Business Travel Visa
 
-- Email: `admin@devsdomain.com`
-- Password: `admin123`
+### Work in USA
+- H-1B Visa
+- L-1 Visa
+- TN Visa
+- Other work authorization options
 
-**⚠️ Change these credentials in production!**
+## Contact Information
 
-## Development
+- Email: info@devonglobalimmigration.com
+- Phone: +1 (555) 123-4567
+- Hours: Mon-Fri 9AM-6PM EST
 
-The framework uses a custom routing system. Controllers are located in `application/controllers/` and views in `application/views/`.
+## Admin Access
+
+Admin dashboard available at `/login` for managing site content.
 
 ## License
 
-MIT License
-
-## Author
-
-Dev's Domain
-
+Copyright © <?php echo date('Y'); ?> Devon Global Immigration Services. All rights reserved.

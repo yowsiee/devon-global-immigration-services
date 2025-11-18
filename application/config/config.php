@@ -24,24 +24,11 @@ $default = [
 
 $setting = [
 
-    'base_url'  => 'http://localhost/lightweight/public'
+    'base_url'  => 'http://localhost/DGIS/'
 
 ];
 
 // Debug mode - set to false in production
 define('DEBUG', true);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- ?>
+?>

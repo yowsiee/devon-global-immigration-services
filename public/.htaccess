@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
   Options -Multiviews
   RewriteEngine On
-  RewriteBase /lightweight/public
+  RewriteBase /DGIS/public
   
   # Sitemap and robots.txt
   RewriteRule ^sitemap\.xml$ index.php?url=sitemap [L]

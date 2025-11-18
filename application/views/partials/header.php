@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo isset($seo['title']) ? htmlspecialchars($seo['title'], ENT_QUOTES, 'UTF-8') : (isset($title) ? htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . ' - Dev\'s Domain' : 'Dev\'s Domain - Professional IT Solutions'); ?></title>
+    <title><?php echo isset($seo['title']) ? htmlspecialchars($seo['title'], ENT_QUOTES, 'UTF-8') : (isset($title) ? htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . ' - Devon Global Immigration Services' : 'Devon Global Immigration Services | Licensed Canadian Immigration Consultants Toronto'); ?></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo Base_URL; ?>/css/style.css">
+    <link rel="icon" type="image/png" href="<?php echo Base_URL; ?>/images/logo.png">
+    <link rel="apple-touch-icon" href="<?php echo Base_URL; ?>/images/logo.png">
     <?php if(isset($seo)): ?>
     <!-- SEO Meta Tags -->
     <meta name="description" content="<?php echo htmlspecialchars($seo['description'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
     <meta name="keywords" content="<?php echo htmlspecialchars($seo['keywords'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
+    <?php if(isset($seo['url'])): ?>
+    <link rel="canonical" href="<?php echo htmlspecialchars($seo['url'], ENT_QUOTES, 'UTF-8'); ?>">
+    <?php endif; ?>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -26,66 +34,76 @@
     <?php endif; ?>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Top Contact Bar -->
+    <section class="top-contact-bar" itemscope itemtype="https://schema.org/LocalBusiness">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="top-contact-left">
+                <!-- Logo removed from top section -->
+            </div>
+            <div class="top-contact-right" style="display: flex; align-items: center; gap: 24px;">
+                <a href="mailto:canada@ttworktravel.com" class="top-contact-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--navy);">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    canada@ttworktravel.com
+                </a>
+                <a href="tel:3473247220" class="top-contact-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--navy);">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    347-324-7220
+                </a>
+                <a href="<?php echo Base_URL; ?>/contact" class="btn-top-assessment" style="background: var(--red); color: var(--white); padding: 8px 20px; border-radius: 6px; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">FREE ASSESSMENT</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="container">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
             <div class="nav-brand">
-                <a href="<?php echo Base_URL; ?>" aria-label="Dev's Domain Home">
-                    <div class="logo-icon">
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="50" height="50" rx="12" fill="url(#gradient)"/>
-                            <defs>
-                                <linearGradient id="gradient" x1="0" y1="0" x2="50" y2="50">
-                                    <stop offset="0%" stop-color="#4c51bf"/>
-                                    <stop offset="100%" stop-color="#5a67d8"/>
-                                </linearGradient>
-                            </defs>
-                            <text x="25" y="32" font-size="24" font-weight="bold" fill="white" text-anchor="middle">DD</text>
-                        </svg>
-                    </div>
-                    <span class="brand-dev">Dev's</span>
-                    <span class="brand-domain">Domain</span>
+                <a href="<?php echo Base_URL; ?>" aria-label="Devon Global Immigration Services Home" style="text-decoration: none; display: flex; align-items: center;">
+                    <img src="<?php echo Base_URL; ?>/images/logo.png" alt="Devon Global Immigration Services Logo" style="height: 45px; width: auto; display: block;" onerror="this.style.display='none';">
                 </a>
             </div>
             
             <ul class="nav-menu" id="navMenu">
                 <li>
-                    <a href="<?php echo Base_URL; ?>" class="nav-link" aria-label="Home">
-                        <span class="nav-icon">🏠</span>
-                        <span class="nav-text">Home</span>
-                    </a>
+                    <a href="<?php echo Base_URL; ?>" class="nav-link" aria-label="Home">HOME</a>
                 </li>
                 <li>
-                    <a href="<?php echo Base_URL; ?>/about" class="nav-link" aria-label="About Us">
-                        <span class="nav-icon">ℹ️</span>
-                        <span class="nav-text">About</span>
+                    <a href="<?php echo Base_URL; ?>/about" class="nav-link" aria-label="About Us">ABOUT US</a>
+                </li>
+                <li class="dropdown">
+                    <a href="<?php echo Base_URL; ?>/services" class="nav-link" aria-label="Services" aria-haspopup="true" aria-expanded="false">
+                        SERVICES
+                        <span class="dropdown-arrow">▼</span>
                     </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="<?php echo Base_URL; ?>/services/canadian-immigration" class="nav-link" aria-label="Canadian Immigration">Canadian Immigration</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo Base_URL; ?>/services/global-temporary-resident" class="nav-link" aria-label="Global Temporary Resident Services">Global Temporary Resident Services</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo Base_URL; ?>/services/citizenship-by-investment" class="nav-link" aria-label="Citizenship by Investment">Citizenship by Investment</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo Base_URL; ?>/services/job-opportunities" class="nav-link" aria-label="Job Opportunities">Job Opportunities</a>
+                        </li>
+                        <li>
+                            <a href="http://www.ttworktravel.com/" target="_blank" rel="noopener noreferrer" class="nav-link" aria-label="Global Recruitment">Global Recruitment</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="<?php echo Base_URL; ?>/services" class="nav-link" aria-label="Services">
-                        <span class="nav-icon">⚙️</span>
-                        <span class="nav-text">Services</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo Base_URL; ?>/portfolio" class="nav-link" aria-label="Portfolio">
-                        <span class="nav-icon">💼</span>
-                        <span class="nav-text">Portfolio</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo Base_URL; ?>/contact" class="nav-link" aria-label="Contact">
-                        <span class="nav-icon">✉️</span>
-                        <span class="nav-text">Contact</span>
-                    </a>
+                    <a href="<?php echo Base_URL; ?>/events" class="nav-link" aria-label="Events">EVENTS</a>
                 </li>
             </ul>
             
-            <a href="<?php echo Base_URL; ?>/contact" class="btn-book" aria-label="Book a consultation">
-                <span>Book Consultation</span>
-            </a>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" style="display: none;">
                 <span></span>
                 <span></span>
                 <span></span>

@@ -1,44 +1,18 @@
-<?php 
+<?php
 
-class About extends Lightweight {
+class About extends Controller {
 
-	public function index(){
-		$data = [
-			'title' => 'About - Professional IT Services',
-			'page' => 'about',
-			'seo' => [
-				'title' => 'About Us - Dev\'s Domain | Expert IT Solutions & Web Development Team',
-				'description' => 'Learn about Dev\'s Domain - a team of expert developers and IT consultants specializing in web development, mobile apps, API integrations, and business automation. 10+ years of excellence.',
-				'keywords' => 'about Dev\'s Domain, IT consultants, web developers, software development team, Trinidad and Tobago IT services',
-				'url' => Base_URL . '/about',
-				'image' => Base_URL . '/images/og-about.jpg'
-			],
-			'breadcrumbs' => [
-				['name' => 'Home', 'url' => Base_URL],
-				['name' => 'About Us', 'url' => Base_URL . '/about']
-			],
-			'skills' => [
-				'PHP', 'JavaScript', 'Python', 'MySQL', 'HTML/CSS', 
-				'React', 'Node.js', 'Cloud Services', 'DevOps', 'API Development'
-			],
-			'experience' => [
-				[
-					'year' => '2020 - Present',
-					'role' => 'Senior IT Consultant',
-					'company' => 'Freelance',
-					'description' => 'Providing comprehensive IT solutions to businesses'
-				],
-				[
-					'year' => '2018 - 2020',
-					'role' => 'Full Stack Developer',
-					'company' => 'Tech Solutions Inc.',
-					'description' => 'Developed web applications and managed cloud infrastructure'
-				]
-			]
-		];
+    public function index() {
+        $data = [
+            'title' => 'About Us - Devon Global Immigration Services | Licensed Immigration Consultants',
+            'seo' => [
+                'title' => 'About Us - Devon Global Immigration Services | Licensed Immigration Consultants Toronto',
+                'description' => 'Learn about Devon Global Immigration Services, licensed immigration consultants in Toronto. Expert guidance for Canadian and US immigration with years of experience and proven success. ICCRC registered consultants serving clients across Canada.',
+                'keywords' => 'about us, immigration consultants Toronto, licensed immigration consultants, ICCRC registered, Canadian immigration services, immigration experts, Toronto immigration, Devon Global Immigration Services, DGIS, immigration consultancy firm, Canadian immigration consultants, US immigration services',
+                'url' => Base_URL . '/about',
+                'image' => Base_URL . '/images/og-image.jpg'
+            ]
+        ];
         $this->view("about", $data);
-	}
+    }
 }
-
-?>
-

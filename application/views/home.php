@@ -2,232 +2,363 @@
 include __DIR__ . '/partials/header.php';
 ?>
 
-<!-- Hero Section -->
-<section class="hero" aria-label="Hero Section">
-    <div class="container hero-container">
-        <div class="hero-content">
-            <p class="hero-subtitle" role="text">TRUSTED IT SOLUTIONS PARTNER</p>
-            <h1 class="hero-title">
-                Professional Web Development & IT Solutions<br>
-                That Drive Business Growth
-            </h1>
-            <p class="hero-description">
-                Transform your business with cutting-edge web development, mobile applications, API integrations, and business process automation. We deliver scalable, secure, and performance-optimized solutions tailored to your needs.
-            </p>
-            <div class="hero-buttons">
-                <a href="<?php echo Base_URL; ?>/services" class="btn btn-primary" aria-label="View our services">Explore Services</a>
-                <a href="<?php echo Base_URL; ?>/contact" class="btn btn-secondary" aria-label="Contact us for a consultation">Get Free Consultation</a>
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+[
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "<?php echo Base_URL; ?>/#organization",
+  "name": "Devon Global Immigration Services",
+  "alternateName": "DGIS",
+  "description": "Licensed immigration consultants in Toronto offering study permits, work permits, Express Entry, PR applications, family sponsorship, and Canadian citizenship. Free consultation available.",
+  "url": "<?php echo Base_URL; ?>",
+  "logo": "<?php echo Base_URL; ?>/images/logo.png",
+  "image": "<?php echo Base_URL; ?>/images/og-image.jpg",
+  "telephone": "347-324-7220",
+  "email": "canada@ttworktravel.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "5-112 Elizabeth St.",
+    "addressLocality": "Toronto",
+    "addressRegion": "ON",
+    "postalCode": "M5G1P9",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "43.6532",
+    "longitude": "-79.3832"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "13:00"
+    }
+  ],
+  "priceRange": "Free Consultation Available",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Canada"
+  },
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "ICCRC Registered",
+    "recognizedBy": {
+      "@type": "Organization",
+      "name": "Immigration Consultants of Canada Regulatory Council"
+    }
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/devon-global-immigration-services",
+    "https://www.facebook.com/devonglobalimmigration"
+  ]
+},
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Devon Global Immigration Services",
+  "description": "Licensed immigration consultants in Toronto offering study permits, work permits, Express Entry, PR applications, family sponsorship, and Canadian citizenship.",
+  "url": "<?php echo Base_URL; ?>",
+  "provider": {
+    "@id": "<?php echo Base_URL; ?>/#organization"
+  },
+  "serviceType": [
+    "Study Permits",
+    "Work Permits",
+    "Express Entry",
+    "Permanent Residence",
+    "Family Sponsorship",
+    "Canadian Citizenship",
+    "Business Immigration",
+    "Citizenship by Investment",
+    "Temporary Visa Services"
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Canada"
+  },
+  "priceRange": "Free Consultation Available"
+},
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Devon Global Immigration Services",
+  "url": "<?php echo Base_URL; ?>",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "<?php echo Base_URL; ?>/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+]
+</script>
+
+<!-- SECTION 1: HERO SECTION (2-COLUMN) -->
+<section class="home-hero">
+    <div class="container">
+        <div class="hero-grid">
+            <!-- Left Column -->
+            <div class="hero-content">
+                <p class="hero-subheadline">Licensed · Experienced · Trusted</p>
+                <ul class="hero-services-list">
+                    <li>
+                        <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16.667 5L7.5 14.167 3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Study Permits
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16.667 5L7.5 14.167 3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Work Permits
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16.667 5L7.5 14.167 3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Family Sponsorship
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16.667 5L7.5 14.167 3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Permanent Residence
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16.667 5L7.5 14.167 3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Canadian Citizenship
+                    </li>
+                </ul>
+                <div class="hero-buttons">
+                    <a href="<?php echo Base_URL; ?>/contact" class="btn-hero-primary">FREE PHONE CONSULTATION</a>
+                    <a href="<?php echo Base_URL; ?>/contact" class="btn-hero-secondary">CHECK ELIGIBILITY</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-graphics">
-            <div class="glass-card main-card">
-                <div class="card-icon" aria-hidden="true">💻</div>
-                <h3 class="card-title">Digital Excellence</h3>
-                <p class="card-text">Modern solutions built with cutting-edge technology</p>
-            </div>
-            <div class="code-snippet snippet-1" aria-hidden="true">
-                <code>&lt;innovation /&gt;</code>
-            </div>
-            <div class="code-snippet snippet-2" aria-hidden="true">
-                <code>const success = true;</code>
-            </div>
-            <div class="code-snippet snippet-3" aria-hidden="true">
-                <code>return excellence;</code>
+            <!-- Right Column -->
+            <div class="hero-image-wrapper">
+                <div class="hero-image-card">
+                    <img src="<?php echo Base_URL; ?>/images/consultant.png" alt="Professional immigration consultant" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hero-image-placeholder" style="display: none; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(27, 51, 88, 0.1) 0%, rgba(213, 16, 43, 0.1) 100%); border-radius: 12px; align-items: center; justify-content: center; flex-direction: column; padding: 2rem;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">👤</div>
+                        <p style="color: var(--navy); font-size: 1.2rem; text-align: center; font-weight: 600;">Professional Consultant</p>
+                    </div>
+                    <h1 class="hero-title-overlay">YOUR CANADIAN IMMIGRATION FUTURE STARTS HERE.</h1>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Services Section -->
-<section class="services-section" aria-labelledby="services-heading">
+<!-- SECTION 2: TRUST BADGES ROW -->
+<section class="trust-badges">
     <div class="container">
-        <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
-            <p class="section-label">OUR SERVICES</p>
-            <h2 id="services-heading" class="section-title">Comprehensive IT Solutions for Modern Businesses</h2>
-            <p class="section-subtitle">From web development to business automation, we provide end-to-end digital solutions that help your business thrive in the digital age.</p>
+        <div class="badges-grid">
+            <!-- Badge 1: RCIC-IRB -->
+            <div class="badge-item badge-simple">
+                <span class="badge-text">RCIC-IRB</span>
+            </div>
+            
+            <!-- Badge 2: OCC Licensed Consultant -->
+            <div class="badge-item badge-with-icon">
+                <svg class="badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <span class="badge-text">
+                    <strong>OCC Licensed</strong> Consultant
+                </span>
+            </div>
+            
+            <!-- Badge 3: 10+ Years Experience -->
+            <div class="badge-item badge-number">
+                <span class="badge-number-large">10+</span>
+                <span class="badge-text-small">Years Experience</span>
+            </div>
+            
+            <!-- Badge 4: Assisted 500+ Clients -->
+            <div class="badge-item badge-with-icon">
+                <svg class="badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span class="badge-text">
+                    Assisted <strong>500+</strong> Clients
+                </span>
+            </div>
         </div>
+    </div>
+</section>
+
+<!-- SECTION 3: SERVICES SECTION (3-COLUMN CARDS) -->
+<section class="services-section">
+    <div class="container">
+        <h2 class="services-heading">WHAT WE CAN HELP YOU WITH</h2>
         <div class="services-grid">
-            <?php if(!empty($services)): ?>
-                <?php foreach(array_slice($services, 0, 6) as $service): ?>
-                <article class="service-card">
-                    <div class="service-card-header <?php echo htmlspecialchars($service['gradient'] ?? 'gradient-purple', ENT_QUOTES, 'UTF-8'); ?>"></div>
-                    <div class="service-card-body">
-                        <div class="service-icon-wrapper <?php echo htmlspecialchars($service['iconColor'] ?? 'icon-purple', ENT_QUOTES, 'UTF-8'); ?>">
-                            <div class="service-icon" aria-hidden="true"><?php echo htmlspecialchars($service['icon'], ENT_QUOTES, 'UTF-8'); ?></div>
-                        </div>
-                        <h3><?php echo htmlspecialchars($service['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
-                        <p><?php echo htmlspecialchars($service['description'], ENT_QUOTES, 'UTF-8'); ?></p>
-                        <?php if(isset($service['tags']) && is_array($service['tags']) && !empty($service['tags'])): ?>
-                            <div class="service-tags" style="margin-top: 1rem;">
-                                <?php foreach(array_slice($service['tags'], 0, 3) as $tag): ?>
-                                    <span class="service-tag"><?php echo htmlspecialchars($tag, ENT_QUOTES, 'UTF-8'); ?></span>
-                                <?php endforeach; ?>
-                            </div>
-                        <?php endif; ?>
-                        <a href="<?php echo Base_URL; ?>/services" class="btn btn-service" style="margin-top: 1.5rem; display: inline-block;">Learn More</a>
-                    </div>
-                </article>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <!-- Fallback services if JSON not available -->
-                <article class="service-card">
-                    <div class="service-card-header gradient-purple"></div>
-                    <div class="service-card-body">
-                        <div class="service-icon-wrapper icon-purple">
-                            <div class="service-icon" aria-hidden="true">&lt;/&gt;</div>
-                        </div>
-                        <h3>Web Development</h3>
-                        <p>Custom websites and web applications built with modern technologies. We create responsive, SEO-optimized solutions that drive business growth.</p>
-                        <a href="<?php echo Base_URL; ?>/services" class="btn btn-service" style="margin-top: 1.5rem; display: inline-block;">Learn More</a>
-                    </div>
-                </article>
-            <?php endif; ?>
-        </div>
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="<?php echo Base_URL; ?>/services" class="btn btn-primary">View All Services</a>
-        </div>
-    </div>
-</section>
+            <!-- Column 1: Citizenship by Investment -->
+            <article class="service-card">
+                <h3 class="service-card-title">Citizenship by Investment</h3>
+                <ul class="service-list">
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Antigua and Barbuda
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Dominica
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Grenada
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        St. Kitts and Nevis
+                    </li>
+                </ul>
+            </article>
 
-<!-- Why Choose Us Section -->
-<section class="why-section" aria-labelledby="why-heading">
-    <div class="container">
-        <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
-            <p class="section-label">WHY CHOOSE US</p>
-            <h2 id="why-heading" class="section-title">Your Trusted Technology Partner</h2>
-            <p class="section-subtitle">We combine technical expertise with business acumen to deliver solutions that drive real results.</p>
-        </div>
-        <div class="features-grid">
-            <article class="feature-card">
-                <div class="feature-icon-wrapper icon-purple">
-                    <div class="feature-icon" aria-hidden="true">💡</div>
-                </div>
-                <h3>Strategic Approach</h3>
-                <p>Every project begins with understanding your business goals, target audience, and market position. We don't just build—we strategize for success.</p>
+            <!-- Column 2: Canadian Immigration -->
+            <article class="service-card">
+                <h3 class="service-card-title">Canadian Immigration</h3>
+                <ul class="service-list">
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Express Entry
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Family Sponsorship
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Provincial Nominees Program
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Other Pathways
+                    </li>
+                </ul>
             </article>
-            <article class="feature-card">
-                <div class="feature-icon-wrapper icon-pink">
-                    <div class="feature-icon" aria-hidden="true">🎨</div>
-                </div>
-                <h3>User-Centered Design</h3>
-                <p>Beautiful design that converts. We create intuitive user experiences that guide visitors toward your goals, whether that's making a purchase or engaging with content.</p>
-            </article>
-            <article class="feature-card">
-                <div class="feature-icon-wrapper icon-blue">
-                    <div class="feature-icon" aria-hidden="true">🚀</div>
-                </div>
-                <h3>Performance Optimized</h3>
-                <p>Fast, scalable, and secure applications built with clean, maintainable code. We optimize for speed, SEO, and user experience to maximize your ROI.</p>
-            </article>
-            <article class="feature-card">
-                <div class="feature-icon-wrapper icon-green">
-                    <div class="feature-icon" aria-hidden="true">🔒</div>
-                </div>
-                <h3>Enterprise Security</h3>
-                <p>Security-first development with industry best practices. We protect your data and your customers' information with robust security measures.</p>
-            </article>
-            <article class="feature-card">
-                <div class="feature-icon-wrapper icon-orange">
-                    <div class="feature-icon" aria-hidden="true">📱</div>
-                </div>
-                <h3>Mobile-First Design</h3>
-                <p>Responsive designs that work flawlessly across all devices. We ensure your website looks and performs perfectly on smartphones, tablets, and desktops.</p>
-            </article>
-            <article class="feature-card">
-                <div class="feature-icon-wrapper icon-teal">
-                    <div class="feature-icon" aria-hidden="true">🛟</div>
-                </div>
-                <h3>Ongoing Support</h3>
-                <p>Our relationship doesn't end at launch. We provide 24/7 support, maintenance, and updates to keep your digital presence running smoothly.</p>
-            </article>
-        </div>
-    </div>
-</section>
 
-<!-- Process Section -->
-<section class="process-section" aria-labelledby="process-heading" style="padding: 5rem 0; background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);">
-    <div class="container">
-        <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
-            <p class="section-label">OUR PROCESS</p>
-            <h2 id="process-heading" class="section-title">How We Deliver Excellence</h2>
-            <p class="section-subtitle">A proven methodology that ensures your project is delivered on time, on budget, and exceeds expectations.</p>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
-            <article style="text-align: center; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4c51bf 0%, #5a67d8 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: bold; color: white;">1</div>
-                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #2d3748;">Discovery & Planning</h3>
-                <p style="color: #718096; line-height: 1.6;">We start by understanding your business, goals, and requirements to create a comprehensive project plan.</p>
-            </article>
-            <article style="text-align: center; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #b83280 0%, #c53030 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: bold; color: white;">2</div>
-                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #2d3748;">Design & Development</h3>
-                <p style="color: #718096; line-height: 1.6;">Our team creates beautiful designs and builds robust solutions using the latest technologies and best practices.</p>
-            </article>
-            <article style="text-align: center; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: bold; color: white;">3</div>
-                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #2d3748;">Testing & Quality Assurance</h3>
-                <p style="color: #718096; line-height: 1.6;">Rigorous testing ensures your solution is bug-free, secure, and performs optimally across all platforms.</p>
-            </article>
-            <article style="text-align: center; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #38a169 0%, #2f855a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: bold; color: white;">4</div>
-                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #2d3748;">Launch & Support</h3>
-                <p style="color: #718096; line-height: 1.6;">We handle deployment and provide ongoing support to ensure your solution continues to deliver value.</p>
+            <!-- Column 3: Temporary Visa Services -->
+            <article class="service-card">
+                <h3 class="service-card-title">Temporary Visa Services</h3>
+                <ul class="service-list">
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Australia
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        United States
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        United Kingdom
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Ireland
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        New Zealand
+                    </li>
+                    <li>
+                        <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Other Countries
+                    </li>
+                </ul>
             </article>
         </div>
     </div>
 </section>
 
-<!-- Technologies Section -->
-<section class="technologies-section" aria-labelledby="tech-heading" style="padding: 5rem 0; background: white;">
+<!-- SECTION 4: CONTACT SECTION -->
+<section class="contact-section">
     <div class="container">
-        <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
-            <p class="section-label">TECHNOLOGIES WE USE</p>
-            <h2 id="tech-heading" class="section-title">Built with Modern, Proven Technologies</h2>
-            <p class="section-subtitle">We leverage industry-leading tools and frameworks to build scalable, maintainable solutions.</p>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; align-items: center;">
-            <div style="padding: 1.5rem 2rem; background: #f7fafc; border-radius: 8px; font-weight: 600; color: #2d3748;">HTML5 & CSS3</div>
-            <div style="padding: 1.5rem 2rem; background: #f7fafc; border-radius: 8px; font-weight: 600; color: #2d3748;">JavaScript & React</div>
-            <div style="padding: 1.5rem 2rem; background: #f7fafc; border-radius: 8px; font-weight: 600; color: #2d3748;">PHP & Laravel</div>
-            <div style="padding: 1.5rem 2rem; background: #f7fafc; border-radius: 8px; font-weight: 600; color: #2d3748;">PowerApps & Power Automate</div>
-            <div style="padding: 1.5rem 2rem; background: #f7fafc; border-radius: 8px; font-weight: 600; color: #2d3748;">SQL Server</div>
-            <div style="padding: 1.5rem 2rem; background: #f7fafc; border-radius: 8px; font-weight: 600; color: #2d3748;">RESTful APIs</div>
-            <div style="padding: 1.5rem 2rem; background: #f7fafc; border-radius: 8px; font-weight: 600; color: #2d3748;">Azure & Cloud Services</div>
-            <div style="padding: 1.5rem 2rem; background: #f7fafc; border-radius: 8px; font-weight: 600; color: #2d3748;">Power BI</div>
-        </div>
-    </div>
-</section>
-
-<!-- Call to Action Section -->
-<section class="cta-section" aria-label="Call to Action">
-    <div class="container">
-        <div class="cta-content">
-            <h2 class="cta-title">Ready to Transform Your Business?</h2>
-            <p class="cta-text">Let's discuss how our IT solutions can help you achieve your business goals. Get a free consultation and discover what's possible for your business.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                <a href="<?php echo Base_URL; ?>/contact" class="btn btn-cta" aria-label="Contact us for a free consultation">Get Free Consultation</a>
-                <a href="<?php echo Base_URL; ?>/portfolio" class="btn btn-secondary" aria-label="View our portfolio of work">View Our Work</a>
+        <div class="contact-grid">
+            <div class="contact-column">
+                <div class="contact-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+                <h3 class="contact-title">Address</h3>
+                <p class="contact-text">5-112 Elizabeth St.<br>Toronto, ON, Canada M5G1P9</p>
+            </div>
+            <div class="contact-column">
+                <div class="contact-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <h3 class="contact-title">Phone & Email</h3>
+                <p class="contact-text">
+                    <a href="tel:3473247220" style="color: inherit; text-decoration: none;">347-324-7220</a><br>
+                    <a href="mailto:canada@ttworktravel.com" style="color: inherit; text-decoration: none;">canada@ttworktravel.com</a>
+                </p>
+            </div>
+            <div class="contact-column">
+                <div class="contact-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div>
+                <h3 class="contact-title">Opening Hours</h3>
+                <p class="contact-text">Mon - Fri 9am - 5pm<br>Sat 9am - 1pm<br>Sunday Closed</p>
             </div>
         </div>
     </div>
 </section>
-
-<!-- Chat Widget -->
-<div class="chat-widget" id="chatWidget" role="button" aria-label="Open chat widget" tabindex="0">
-    <div class="chat-notification" aria-hidden="true"></div>
-    <div class="chat-icon" aria-hidden="true">💬</div>
-    <div class="chat-text">
-        <strong>Talk with Us</strong>
-        <span>We're here to help!</span>
-    </div>
-</div>
-
-<!-- Scroll to Top Button -->
-<div class="scroll-top" id="scrollTop" role="button" aria-label="Scroll to top" tabindex="0">
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <path d="M10 15V5M5 10L10 5L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-</div>
 
 <?php
 include __DIR__ . '/partials/footer.php';

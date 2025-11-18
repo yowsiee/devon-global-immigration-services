@@ -3,83 +3,19 @@
 class Services extends Lightweight {
 
 	public function index(){
-		// Get services from JSON file
-		$servicesFile = $this->basePath . '/application/data/services.json';
-		$allServices = [];
-		
-		if(file_exists($servicesFile)){
-			$allServices = json_decode(file_get_contents($servicesFile), true) ?? [];
-		}
-
-		// Get services visibility settings
-		$visibilityFile = $this->basePath . '/application/data/services_visibility.json';
-		$visibility = [];
-		
-		if(file_exists($visibilityFile)){
-			$visibility = json_decode(file_get_contents($visibilityFile), true) ?? [];
-		}
-
-		// Convert to array format and apply visibility
-		$servicesArray = [];
-		foreach($allServices as $key => $service) {
-			$service['key'] = $key;
-			$service['visible'] = isset($visibility[$key]) ? (bool)$visibility[$key] : (isset($service['visible']) ? (bool)$service['visible'] : true);
-			$servicesArray[] = $service;
-		}
-
-		// Filter only visible services
-		$visibleServices = array_filter($servicesArray, function($service) {
-			return $service['visible'] === true;
-		});
-
-		// Remove the 'visible' field but keep 'key' for service URLs
-		$services = array_map(function($service) {
-			unset($service['visible']);
-			if(isset($service['created_at'])) unset($service['created_at']);
-			if(isset($service['updated_at'])) unset($service['updated_at']);
-			return $service;
-		}, $visibleServices);
-
 		$data = [
-			'title' => 'Services - Dev\'s Domain',
+			'title' => 'Services - Devon Global Immigration Services',
 			'page' => 'services',
 			'seo' => [
-				'title' => 'IT Services - Web Development, Mobile Apps & Business Automation | Dev\'s Domain',
-				'description' => 'Professional IT services including custom web development, mobile app development, API integrations, and business process automation. Transform your business with our expert solutions.',
-				'keywords' => 'web development services, mobile app development, API integration services, business process automation, PowerApps, LogicApps, custom software development',
+				'title' => 'Immigration & Recruitment Services | Canadian Immigration | Global Services | DGIS',
+				'description' => 'Comprehensive immigration and recruitment services including Canadian immigration, global temporary resident services, citizenship by investment, job opportunities, and global recruitment. Licensed RCIC consultants in Toronto.',
+				'keywords' => 'Canadian immigration, global temporary resident services, citizenship by investment, job opportunities, global recruitment, immigration consultant Toronto, RCIC consultant, work permits, study permits, visa services, Devon Global Immigration Services, DGIS',
 				'url' => Base_URL . '/services',
-				'image' => Base_URL . '/images/og-services.jpg'
+				'image' => Base_URL . '/images/og-image.jpg'
 			],
 			'breadcrumbs' => [
 				['name' => 'Home', 'url' => Base_URL],
 				['name' => 'Services', 'url' => Base_URL . '/services']
-			],
-			'services' => array_values($services),
-			'benefits' => [
-				[
-					'icon' => '🚀',
-					'iconColor' => 'icon-purple',
-					'title' => 'Fast Delivery',
-					'description' => 'Quick turnaround times without compromising quality.'
-				],
-				[
-					'icon' => '🔒',
-					'iconColor' => 'icon-pink',
-					'title' => 'Secure & Reliable',
-					'description' => 'Enterprise-grade security and 99.9% uptime guarantee.'
-				],
-				[
-					'icon' => '👥',
-					'iconColor' => 'icon-blue',
-					'title' => 'Expert Team',
-					'description' => 'Experienced developers and consultants.'
-				],
-				[
-					'icon' => '🎧',
-					'iconColor' => 'icon-green',
-					'title' => '24/7 Support',
-					'description' => 'Ongoing support and maintenance services.'
-				]
 			]
 		];
         $this->view("services", $data);
@@ -98,6 +34,26 @@ class Services extends Lightweight {
 		
 		if($slug === 'application-support-maintenance' || $method === 'applicationSupportMaintenance' || $method === 'application-support-maintenance'){
 			$this->showServiceDetail('application-support-maintenance');
+			return;
+		}
+		
+		if($slug === 'citizenship-by-investment' || $method === 'citizenshipByInvestment' || $method === 'citizenship-by-investment'){
+			$this->showServiceDetail('citizenship-by-investment');
+			return;
+		}
+		
+		if($slug === 'global-temporary-resident' || $slug === 'global-temporary-resident-services' || $method === 'globalTemporaryResident' || $method === 'globalTemporaryResidentServices'){
+			$this->showServiceDetail('global-temporary-resident');
+			return;
+		}
+		
+		if($slug === 'job-opportunities' || $slug === 'job-opportunity' || $method === 'jobOpportunities' || $method === 'jobOpportunity'){
+			$this->showServiceDetail('job-opportunities');
+			return;
+		}
+		
+		if($slug === 'canadian-immigration' || $slug === 'canadian-immigration-services' || $method === 'canadianImmigration' || $method === 'canadianImmigrationServices'){
+			$this->showServiceDetail('canadian-immigration');
 			return;
 		}
 		
@@ -147,6 +103,90 @@ class Services extends Lightweight {
 				]
 			];
 			$this->view("service-application-support-maintenance", $data);
+			return;
+		}
+		
+		if($serviceSlug === 'citizenship-by-investment'){
+			$data = [
+				'title' => 'Citizenship by Investment - Devon Global Immigration Services',
+				'page' => 'services',
+				'seo' => [
+					'title' => 'Citizenship by Investment Programs | Caribbean Citizenship | DGIS',
+					'description' => 'Expert guidance on citizenship-by-investment programs in Antigua and Barbuda, Dominica, Grenada, St. Kitts and Nevis, and St. Lucia. Investment pathways starting from $100,000 USD with visa-free access to 144-157 countries.',
+					'keywords' => 'citizenship by investment, economic citizenship, Caribbean citizenship, Antigua and Barbuda citizenship, Dominica citizenship, Grenada citizenship, St. Kitts and Nevis citizenship, St. Lucia citizenship, investment immigration, second passport, visa-free travel, Devon Global Immigration Services',
+					'url' => Base_URL . '/services/citizenship-by-investment',
+					'image' => Base_URL . '/images/og-image.jpg'
+				],
+				'breadcrumbs' => [
+					['name' => 'Home', 'url' => Base_URL],
+					['name' => 'Services', 'url' => Base_URL . '/services'],
+					['name' => 'Citizenship by Investment', 'url' => Base_URL . '/services/citizenship-by-investment']
+				]
+			];
+			$this->view("service-citizenship-by-investment", $data);
+			return;
+		}
+		
+		if($serviceSlug === 'global-temporary-resident'){
+			$data = [
+				'title' => 'Global Temporary Resident Services - Devon Global Immigration Services',
+				'page' => 'services',
+				'seo' => [
+					'title' => 'Global Temporary Visa Services | Tourist & Business Visas | DGIS',
+					'description' => 'Expert assistance with temporary resident visas, tourist visas, business visas, and Electronic Travel Authorization documents for countries around the world. Professional guidance for all your temporary travel needs.',
+					'keywords' => 'temporary visa services, tourist visa, business visa, Electronic Travel Authorization, ETA, temporary resident visa, travel documents, visa application, global visa services, immigration consultant, Devon Global Immigration Services',
+					'url' => Base_URL . '/services/global-temporary-resident',
+					'image' => Base_URL . '/images/og-image.jpg'
+				],
+				'breadcrumbs' => [
+					['name' => 'Home', 'url' => Base_URL],
+					['name' => 'Services', 'url' => Base_URL . '/services'],
+					['name' => 'Global Temporary Resident Services', 'url' => Base_URL . '/services/global-temporary-resident']
+				]
+			];
+			$this->view("service-global-temporary-resident", $data);
+			return;
+		}
+		
+		if($serviceSlug === 'job-opportunities'){
+			$data = [
+				'title' => 'Job Opportunities - Devon Global Immigration Services',
+				'page' => 'services',
+				'seo' => [
+					'title' => 'Job Opportunities | US J1 Visa Program | Work in America | DGIS',
+					'description' => 'Explore J1 visa opportunities in the United States including Culinary Arts, Food and Beverage, Rooms Division, and Teaching positions. Apply for exciting work opportunities in America through the J1 exchange visitor program.',
+					'keywords' => 'job opportunities, J1 visa, J1 opportunities, US work visa, J1 program, exchange visitor program, culinary arts jobs USA, hospitality jobs USA, teaching jobs USA, work in America, J1 visa application, Devon Global Immigration Services',
+					'url' => Base_URL . '/services/job-opportunities',
+					'image' => Base_URL . '/images/og-image.jpg'
+				],
+				'breadcrumbs' => [
+					['name' => 'Home', 'url' => Base_URL],
+					['name' => 'Services', 'url' => Base_URL . '/services'],
+					['name' => 'Job Opportunities', 'url' => Base_URL . '/services/job-opportunities']
+				]
+			];
+			$this->view("service-job-opportunities", $data);
+			return;
+		}
+		
+		if($serviceSlug === 'canadian-immigration'){
+			$data = [
+				'title' => 'Canadian Immigration Services - Devon Global Immigration Services',
+				'page' => 'services',
+				'seo' => [
+					'title' => 'Canadian Immigration Services | Work Permits | Express Entry | RCIC Consultants | DGIS',
+					'description' => 'Comprehensive Canadian immigration services including work permits, express entry, family sponsorship, business immigration, permanent residence, and visa services. Licensed RCIC consultants in Toronto.',
+					'keywords' => 'Canadian immigration, work permits, express entry, business immigration, family sponsorship, permanent residence, study permits, RCIC consultant, immigration services Toronto, Devon Global Immigration Services',
+					'url' => Base_URL . '/services/canadian-immigration',
+					'image' => Base_URL . '/images/og-image.jpg'
+				],
+				'breadcrumbs' => [
+					['name' => 'Home', 'url' => Base_URL],
+					['name' => 'Services', 'url' => Base_URL . '/services'],
+					['name' => 'Canadian Immigration', 'url' => Base_URL . '/services/canadian-immigration']
+				]
+			];
+			$this->view("service-canadian-immigration", $data);
 			return;
 		}
 		
