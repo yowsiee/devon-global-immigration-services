@@ -12,7 +12,7 @@
     <aside class="dashboard-sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo">
-                <img src="<?php echo Base_URL; ?>/images/logo.png" alt="DGIS Logo" onerror="this.style.display='none';">
+                <img src="<?php echo Base_URL; ?>/images/logo.png" alt="DGIS Logo">
             </div>
             <h2>DGIS</h2>
             <p>Admin Dashboard</p>
@@ -25,13 +25,6 @@
                 </svg>
                 <span>Dashboard</span>
             </a>
-            <a href="<?php echo Base_URL; ?>/dashboard/services" class="nav-item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24" stroke="currentColor" stroke-width="2"/>
-                </svg>
-                <span>Services</span>
-            </a>
             <a href="<?php echo Base_URL; ?>/dashboard/events" class="nav-item">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                     <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
@@ -40,6 +33,15 @@
                     <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
                 </svg>
                 <span>Events</span>
+            </a>
+            <a href="<?php echo Base_URL; ?>/dashboard/newsletters" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2"/>
+                    <line x1="8" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="2"/>
+                    <line x1="8" y1="11" x2="18" y2="11" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Newsletters</span>
             </a>
             <div class="nav-divider"></div>
             <a href="<?php echo Base_URL; ?>/login/logout" class="nav-item nav-item-logout">
@@ -137,28 +139,32 @@
                 <div class="stat-card">
                     <div class="stat-icon-wrapper stat-icon-navy">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2"/>
+                            <line x1="8" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="2"/>
+                            <line x1="8" y1="11" x2="18" y2="11" stroke="currentColor" stroke-width="2"/>
                         </svg>
                     </div>
                     <div class="stat-content">
-                        <div class="stat-number"><?php echo $stats['active_services'] ?? 0; ?></div>
-                        <div class="stat-label">Active Services</div>
-                        <div class="stat-change"><?php echo $stats['total_services'] ?? 5; ?> total services</div>
+                        <div class="stat-number"><?php echo $stats['total_newsletters'] ?? 0; ?></div>
+                        <div class="stat-label">Total Newsletters</div>
+                        <div class="stat-change">Published newsletters</div>
                     </div>
                 </div>
                 
                 <div class="stat-card">
                     <div class="stat-icon-wrapper stat-icon-red">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2"/>
+                            <line x1="8" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="2"/>
+                            <line x1="8" y1="11" x2="18" y2="11" stroke="currentColor" stroke-width="2"/>
                         </svg>
                     </div>
                     <div class="stat-content">
-                        <div class="stat-number"><?php echo $stats['total_services'] ?? 5; ?></div>
-                        <div class="stat-label">Service Categories</div>
-                        <div class="stat-change">Main services</div>
+                        <div class="stat-number"><?php echo $stats['visible_newsletters'] ?? 0; ?></div>
+                        <div class="stat-label">Visible Newsletters</div>
+                        <div class="stat-change">Currently visible</div>
                     </div>
                 </div>
             </div>
@@ -183,16 +189,18 @@
                             </div>
                         </a>
                         
-                        <a href="<?php echo Base_URL; ?>/dashboard/services" class="quick-action-btn">
+                        <a href="<?php echo Base_URL; ?>/dashboard/newsletters" class="quick-action-btn">
                             <div class="action-icon">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="3"/>
-                                    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="8" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="8" y1="11" x2="18" y2="11" stroke="currentColor" stroke-width="2"/>
                                 </svg>
                             </div>
                             <div class="action-content">
-                                <h3>Manage Services</h3>
-                                <p>Update service information</p>
+                                <h3>Manage Newsletters</h3>
+                                <p>Add or edit newsletters</p>
                             </div>
                         </a>
                         
@@ -210,7 +218,7 @@
                             </div>
                         </a>
                         
-                        <a href="<?php echo Base_URL; ?>/services" target="_blank" class="quick-action-btn">
+                        <a href="<?php echo Base_URL; ?>/newsletters" target="_blank" class="quick-action-btn">
                             <div class="action-icon">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -219,8 +227,8 @@
                                 </svg>
                             </div>
                             <div class="action-content">
-                                <h3>View Services Page</h3>
-                                <p>See services on the website</p>
+                                <h3>View Newsletters Page</h3>
+                                <p>See newsletters on the website</p>
                             </div>
                         </a>
                     </div>
@@ -244,10 +252,12 @@
                                             <line x1="8" y1="2" x2="8" y2="6"/>
                                             <line x1="3" y1="10" x2="21" y2="10"/>
                                         </svg>
-                                    <?php elseif($activity['type'] === 'service'): ?>
+                                    <?php elseif($activity['type'] === 'newsletter'): ?>
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <circle cx="12" cy="12" r="3"/>
-                                            <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+                                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2"/>
+                                            <line x1="8" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="2"/>
+                                            <line x1="8" y1="11" x2="18" y2="11" stroke="currentColor" stroke-width="2"/>
                                         </svg>
                                     <?php else: ?>
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

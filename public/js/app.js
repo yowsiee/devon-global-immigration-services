@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Normalize paths (remove trailing slashes and base path)
-            const basePath = '/lightweight';
+            const basePath = '/DGIS/public';
             let normalizedCurrent = currentPath.replace(/\/$/, '') || '/';
             let normalizedLink = linkPath.replace(/\/$/, '') || '/';
             
@@ -45,6 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             if (normalizedLink.startsWith(basePath)) {
                 normalizedLink = normalizedLink.replace(basePath, '') || '/';
+            }
+            
+            // Also handle /DGIS/public pattern
+            if (normalizedCurrent.startsWith('/DGIS/public')) {
+                normalizedCurrent = normalizedCurrent.replace('/DGIS/public', '') || '/';
+            }
+            if (normalizedLink.startsWith('/DGIS/public')) {
+                normalizedLink = normalizedLink.replace('/DGIS/public', '') || '/';
             }
             
             // Check if current path matches link path
@@ -70,12 +78,76 @@ document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     
-    if (navToggle) {
+    // Mobile menu toggle
+    if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
+            const isActive = navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            navToggle.setAttribute('aria-expanded', isActive);
+            document.body.style.overflow = isActive ? 'hidden' : '';
         });
+        
+        // Show/hide mobile toggle based on screen size
+        function checkMobileMenu() {
+            if (window.innerWidth <= 768) {
+                navToggle.style.display = 'flex';
+            } else {
+                navToggle.style.display = 'none';
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        checkMobileMenu();
+        window.addEventListener('resize', checkMobileMenu);
+    }
+    
+    // Dropdown menu functionality
+    const servicesDropdown = document.getElementById('servicesDropdown');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    
+    if (servicesDropdown && dropdownMenu) {
+        let dropdownTimeout;
+        
+        // Desktop hover
+        if (window.innerWidth > 768) {
+            servicesDropdown.addEventListener('mouseenter', function() {
+                clearTimeout(dropdownTimeout);
+                dropdownMenu.style.opacity = '1';
+                dropdownMenu.style.visibility = 'visible';
+                servicesDropdown.setAttribute('aria-expanded', 'true');
+            });
+            
+            servicesDropdown.addEventListener('mouseleave', function() {
+                dropdownTimeout = setTimeout(function() {
+                    dropdownMenu.style.opacity = '0';
+                    dropdownMenu.style.visibility = 'hidden';
+                    servicesDropdown.setAttribute('aria-expanded', 'false');
+                }, 200);
+            });
+            
+            dropdownMenu.addEventListener('mouseenter', function() {
+                clearTimeout(dropdownTimeout);
+            });
+            
+            dropdownMenu.addEventListener('mouseleave', function() {
+                dropdownMenu.style.opacity = '0';
+                dropdownMenu.style.visibility = 'hidden';
+                servicesDropdown.setAttribute('aria-expanded', 'false');
+            });
+        }
+        
+        // Mobile/Tablet click
+        if (window.innerWidth <= 768) {
+            servicesDropdown.addEventListener('click', function(e) {
+                e.preventDefault();
+                const isExpanded = servicesDropdown.getAttribute('aria-expanded') === 'true';
+                servicesDropdown.setAttribute('aria-expanded', !isExpanded);
+                dropdownMenu.style.display = isExpanded ? 'none' : 'block';
+            });
+        }
     }
     
     // Close menu when clicking on a link
@@ -87,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             if (navToggle) {
                 navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
             }
             document.body.style.overflow = '';
             // Update active state after navigation
@@ -313,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             // Submit to contact form handler
-            fetch(window.location.origin + '/lightweight/contact/submit', {
+            fetch(window.location.origin + '/DGIS/public/contact/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

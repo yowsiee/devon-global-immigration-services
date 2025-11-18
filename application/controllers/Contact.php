@@ -1,17 +1,17 @@
 <?php 
 
-class Contact extends Lightweight {
+class Contact extends Controller {
 
 	public function index(){
 		$data = [
-			'title' => 'Contact - Get In Touch',
+			'title' => 'Contact Us - Devon Global Immigration Services',
 			'page' => 'contact',
 			'seo' => [
-				'title' => 'Contact Us - Get Free Quote | Dev\'s Domain',
-				'description' => 'Contact Dev\'s Domain for professional IT solutions. Get a free quote for web development, mobile apps, API integrations, and business automation services. We respond within 24 hours.',
-				'keywords' => 'contact Dev\'s Domain, IT services quote, web development consultation, Trinidad and Tobago IT services, get in touch',
+				'title' => 'Contact Us - Devon Global Immigration Services | Free Consultation | DGIS',
+				'description' => 'Contact Devon Global Immigration Services for expert immigration assistance. Get a free consultation for Canadian and US immigration services. Licensed RCIC consultants ready to help with your immigration journey.',
+				'keywords' => 'contact immigration consultant, free immigration consultation, Canadian immigration help, immigration services Toronto, contact RCIC consultant, immigration questions, Devon Global Immigration Services, DGIS',
 				'url' => Base_URL . '/contact',
-				'image' => Base_URL . '/images/og-contact.jpg'
+				'image' => Base_URL . '/images/og-image.jpg'
 			],
 			'breadcrumbs' => [
 				['name' => 'Home', 'url' => Base_URL],
@@ -32,50 +32,24 @@ class Contact extends Lightweight {
 			// Validate CSRF token
 			$this->validateCsrf();
 			
-			// Get form data (handle both regular contact form and consultation form)
+			// Get form data
 			$first_name = $this->post('first_name');
 			$last_name = $this->post('last_name');
 			$email = $this->post('email');
 			$phone = $this->post('phone');
-			$company = $this->post('company');
-			$website = $this->post('website');
-			$subject = $this->post('subject');
+			$nationality = $this->post('nationality');
 			$message = $this->post('message');
 			
-			// Consultation form fields
-			$service = $this->post('service');
-			$budget = $this->post('budget');
-			$timeline = $this->post('timeline');
-			$details = $this->post('details');
-			
-			// If it's a consultation form, use details as message and build subject
-			if(!empty($details)) {
-				$message = $details;
-				if(empty($subject)) {
-					$subject = "Consultation Request";
-					if(!empty($service)) {
-						$subject .= " - " . $service;
-					}
-				}
-				// Add consultation details to message
-				$message = "Service Interest: " . ($service ?: 'Not specified') . "\n\n";
-				$message .= "Project Budget: " . ($budget ?: 'Not specified') . "\n";
-				$message .= "Project Timeline: " . ($timeline ?: 'Not specified') . "\n\n";
-				$message .= "Project Details:\n" . $details;
-			}
-			
 			// Basic validation
-			if(empty($first_name) || empty($last_name) || empty($email) || empty($message)){
-				throw new Exception("Please fill in all required fields.");
-			}
-			
-			if(empty($subject)) {
-				$subject = "Contact Form Submission";
+			if(empty($email) || empty($message)){
+				throw new Exception("Please fill in all required fields (Email and Message are required).");
 			}
 			
 			if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 				throw new Exception("Please provide a valid email address.");
 			}
+			
+			$subject = "Contact Form Submission - " . ($first_name ? $first_name . ' ' : '') . ($last_name ? $last_name : '');
 			
 			// In a real application, you would:
 			// 1. Save to database
@@ -97,14 +71,14 @@ class Contact extends Lightweight {
 			}
 			
 			$data = [
-				'title' => 'Contact - Get In Touch',
+				'title' => 'Contact Us - Devon Global Immigration Services',
 				'page' => 'contact',
 				'seo' => [
-					'title' => 'Contact Us - Get Free Quote | Dev\'s Domain',
-					'description' => 'Contact Dev\'s Domain for professional IT solutions. Get a free quote for web development, mobile apps, API integrations, and business automation services.',
-					'keywords' => 'contact Dev\'s Domain, IT services quote, web development consultation',
+					'title' => 'Contact Us - Devon Global Immigration Services | Free Consultation | DGIS',
+					'description' => 'Contact Devon Global Immigration Services for expert immigration assistance. Get a free consultation for Canadian and US immigration services.',
+					'keywords' => 'contact immigration consultant, free immigration consultation, Canadian immigration help, immigration services Toronto, contact RCIC consultant, Devon Global Immigration Services, DGIS',
 					'url' => Base_URL . '/contact',
-					'image' => Base_URL . '/images/og-contact.jpg'
+					'image' => Base_URL . '/images/og-image.jpg'
 				],
 				'breadcrumbs' => [
 					['name' => 'Home', 'url' => Base_URL],
@@ -112,7 +86,7 @@ class Contact extends Lightweight {
 				],
 				'success' => true,
 				'error' => null,
-				'submitted_name' => $first_name . ' ' . $last_name
+				'submitted_name' => ($first_name ? $first_name . ' ' : '') . ($last_name ? $last_name : 'Visitor')
 			];
 			
 			$this->view("contact", $data);
@@ -130,14 +104,14 @@ class Contact extends Lightweight {
 			}
 			
 			$data = [
-				'title' => 'Contact - Get In Touch',
+				'title' => 'Contact Us - Devon Global Immigration Services',
 				'page' => 'contact',
 				'seo' => [
-					'title' => 'Contact Us - Get Free Quote | Dev\'s Domain',
-					'description' => 'Contact Dev\'s Domain for professional IT solutions. Get a free quote for web development, mobile apps, API integrations, and business automation services.',
-					'keywords' => 'contact Dev\'s Domain, IT services quote, web development consultation',
+					'title' => 'Contact Us - Devon Global Immigration Services | Free Consultation | DGIS',
+					'description' => 'Contact Devon Global Immigration Services for expert immigration assistance. Get a free consultation for Canadian and US immigration services.',
+					'keywords' => 'contact immigration consultant, free immigration consultation, Canadian immigration help, immigration services Toronto, contact RCIC consultant, Devon Global Immigration Services, DGIS',
 					'url' => Base_URL . '/contact',
-					'image' => Base_URL . '/images/og-contact.jpg'
+					'image' => Base_URL . '/images/og-image.jpg'
 				],
 				'breadcrumbs' => [
 					['name' => 'Home', 'url' => Base_URL],

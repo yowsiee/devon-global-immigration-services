@@ -5,7 +5,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <a href="<?php echo Base_URL; ?>" style="display: inline-block; margin-bottom: 16px;">
-                        <img src="<?php echo Base_URL; ?>/images/logo.png" alt="Devon Global Immigration Services Logo" style="height: 50px; width: auto; display: block; filter: brightness(0) invert(1);" onerror="this.style.display='none';">
+                        <img src="<?php echo Base_URL; ?>/images/logo.png" alt="Devon Global Immigration Services Logo" style="height: 50px; width: auto; max-width: 100%; display: block; object-fit: contain;" onerror="this.style.display='none';">
                     </a>
                     <h3>Devon Global Immigration Services</h3>
                     <p>Licensed immigration consultants helping you achieve your Canadian immigration goals.</p>
@@ -147,6 +147,6 @@
         </div>
     </div>
 
-    <script src="<?php echo Base_URL; ?>/js/app.js"></script>
+    <script src="<?php echo Base_URL; ?>/js/app.js" defer></script>
 </body>
 </html>

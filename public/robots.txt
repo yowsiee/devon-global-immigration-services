@@ -10,7 +10,7 @@ Disallow: /*.json$
 Disallow: /*?*
 
 # Sitemap location (update with your actual domain)
-Sitemap: http://localhost/lightweight/sitemap.xml
+Sitemap: http://localhost/DGIS/public/sitemap.xml
 
 # Crawl-delay (optional)
 Crawl-delay: 1

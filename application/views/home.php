@@ -110,7 +110,7 @@ include __DIR__ . '/partials/header.php';
     <div class="container">
         <div class="hero-grid">
             <!-- Left Column -->
-            <div class="hero-content">
+        <div class="hero-content">
                 <p class="hero-subheadline">Licensed · Experienced · Trusted</p>
                 <ul class="hero-services-list">
                     <li>
@@ -144,7 +144,7 @@ include __DIR__ . '/partials/header.php';
                         Canadian Citizenship
                     </li>
                 </ul>
-                <div class="hero-buttons">
+            <div class="hero-buttons">
                     <a href="<?php echo Base_URL; ?>/contact" class="btn-hero-primary">FREE PHONE CONSULTATION</a>
                     <a href="<?php echo Base_URL; ?>/contact" class="btn-hero-secondary">CHECK ELIGIBILITY</a>
                 </div>
@@ -242,7 +242,7 @@ include __DIR__ . '/partials/header.php';
                     </li>
                 </ul>
             </article>
-
+            
             <!-- Column 2: Canadian Immigration -->
             <article class="service-card">
                 <h3 class="service-card-title">Canadian Immigration</h3>
@@ -273,7 +273,7 @@ include __DIR__ . '/partials/header.php';
                     </li>
                 </ul>
             </article>
-
+            
             <!-- Column 3: Temporary Visa Services -->
             <article class="service-card">
                 <h3 class="service-card-title">Temporary Visa Services</h3>
@@ -330,7 +330,7 @@ include __DIR__ . '/partials/header.php';
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>
-                </div>
+        </div>
                 <h3 class="contact-title">Address</h3>
                 <p class="contact-text">5-112 Elizabeth St.<br>Toronto, ON, Canada M5G1P9</p>
             </div>

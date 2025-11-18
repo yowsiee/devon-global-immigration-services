@@ -1,5 +1,5 @@
 <IfModule mod_rewrite.c>
-  Options -Multiviews
+  Options -Multiviews -Indexes
   RewriteEngine On
   RewriteBase /DGIS/public
   
@@ -7,7 +7,16 @@
   RewriteRule ^sitemap\.xml$ index.php?url=sitemap [L]
   RewriteRule ^robots\.txt$ robots.txt [L]
   
-  # Standard routing
+  # Prevent directory listing
+  Options -Indexes
+  
+  # Route newsletter requests through controller
+  # Handle both /newsletters (index) and /newsletters/filename (file download)
+  # Must come BEFORE checking if directory exists
+  RewriteCond %{REQUEST_URI} ^.*/newsletters
+  RewriteRule ^newsletters/?(.*)$ index.php?url=newsletters/$1 [QSA,L]
+  
+  # Standard routing (skip if file or directory exists)
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
@@ -37,4 +46,24 @@
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  
+  # Content Security Policy
+  # Note: 'unsafe-inline' and 'unsafe-eval' are required for some JavaScript functionality
+  # In production, consider removing these and using nonces or hashes
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests;"
+</IfModule>
+
+# Performance optimizations
+<IfModule mod_headers.c>
+  # Preload critical resources
+  <FilesMatch "\.(css|js|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # Enable compression for text files
+  <FilesMatch "\.(html|css|js|json|xml|txt|svg)$">
+    Header set Vary "Accept-Encoding"
+  </FilesMatch>
 </IfModule>

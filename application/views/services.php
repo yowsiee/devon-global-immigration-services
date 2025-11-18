@@ -36,7 +36,7 @@ include __DIR__ . '/partials/header.php';
                 <div style="font-size: 3rem; margin-bottom: 1rem;">🇨🇦</div>
                 <p style="font-size: 1.5rem; font-weight: 600;">Canadian Immigration Services</p>
             </div>
-        </div>
+                </div>
         <div class="services-hero-overlay">
             <div class="container">
                 <h1 class="services-hero-title">Canadian Immigration Services</h1>
@@ -144,8 +144,8 @@ include __DIR__ . '/partials/header.php';
                         <p class="service-card-description">
                             We help employers find and recruit qualified international talent. Our recruitment services include candidate sourcing, screening, immigration support, and assistance with work permit applications for foreign workers.
                         </p>
-                    </div>
                 </div>
+            </div>
             </a>
         </div>
     </div>

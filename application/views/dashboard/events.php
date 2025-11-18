@@ -11,6 +11,9 @@
     <!-- Sidebar -->
     <aside class="dashboard-sidebar">
         <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <img src="<?php echo Base_URL; ?>/images/logo.png" alt="DGIS Logo">
+            </div>
             <h2>DGIS</h2>
             <p>Admin Dashboard</p>
         </div>
@@ -22,13 +25,6 @@
                 </svg>
                 <span>Dashboard</span>
             </a>
-            <a href="<?php echo Base_URL; ?>/dashboard/services" class="nav-item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24" stroke="currentColor" stroke-width="2"/>
-                </svg>
-                <span>Services</span>
-            </a>
             <a href="<?php echo Base_URL; ?>/dashboard/events" class="nav-item active">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                     <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
@@ -37,6 +33,15 @@
                     <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
                 </svg>
                 <span>Events</span>
+            </a>
+            <a href="<?php echo Base_URL; ?>/dashboard/newsletters" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2"/>
+                    <line x1="8" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="2"/>
+                    <line x1="8" y1="11" x2="18" y2="11" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Newsletters</span>
             </a>
             <div class="nav-divider"></div>
             <a href="<?php echo Base_URL; ?>/login/logout" class="nav-item nav-item-logout">
@@ -128,9 +133,27 @@
                             <input type="text" id="event_location" name="location" class="form-control" required placeholder="e.g., Zoom Online">
                         </div>
                         <div class="form-group">
-                            <label for="event_image">Image Filename</label>
-                            <input type="text" id="event_image" name="image" class="form-control" placeholder="e.g., event-application-form.png">
-                            <small style="color: #718096; font-size: 0.85rem;">Image should be in /public/images/ directory</small>
+                            <label for="event_image">Event Image</label>
+                            <div class="image-upload-section">
+                                <div class="image-upload-controls">
+                                    <input type="file" id="event_image_upload" name="image_upload" accept="image/jpeg,image/png,image/gif,image/webp,image/avif" style="display: none;">
+                                    <button type="button" id="uploadImageBtn" class="btn btn-secondary" style="margin-bottom: 0.5rem;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                            <polyline points="17 8 12 3 7 8"></polyline>
+                                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                                        </svg>
+                                        Upload Image
+                                    </button>
+                                    <span style="margin: 0 0.5rem; color: #718096;">or</span>
+                                    <input type="text" id="event_image" name="image" class="form-control" style="display: inline-block; width: auto; min-width: 250px;" placeholder="Enter existing filename">
+                                </div>
+                                <div id="imagePreview" style="margin-top: 1rem; display: none;">
+                                    <img id="previewImg" src="" alt="Preview" style="max-width: 300px; max-height: 200px; border-radius: 8px; border: 2px solid #e2e8f0;">
+                                    <p id="previewFilename" style="margin-top: 0.5rem; color: #718096; font-size: 0.875rem;"></p>
+                                </div>
+                                <small style="color: #718096; font-size: 0.85rem; display: block; margin-top: 0.5rem;">Upload a new image or enter an existing filename from /public/images/ directory</small>
+                            </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
@@ -172,19 +195,44 @@
                             <div class="event-card-item" data-event-slug="<?php echo htmlspecialchars($event['slug'], ENT_QUOTES, 'UTF-8'); ?>">
                                 <div class="event-card-header">
                                     <h3><?php echo htmlspecialchars($event['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
-                                    <div class="event-card-actions">
-                                        <button class="btn-icon edit-event-btn" data-slug="<?php echo htmlspecialchars($event['slug'], ENT_QUOTES, 'UTF-8'); ?>" title="Edit">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                            </svg>
-                                        </button>
-                                        <button class="btn-icon delete-event-btn" data-slug="<?php echo htmlspecialchars($event['slug'], ENT_QUOTES, 'UTF-8'); ?>" title="Delete">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="3 6 5 6 21 6"></polyline>
-                                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                            </svg>
-                                        </button>
+                                    <div class="event-card-actions-wrapper">
+                                        <div class="event-card-actions">
+                                            <button class="btn-icon toggle-visibility-btn" data-slug="<?php echo htmlspecialchars($event['slug'], ENT_QUOTES, 'UTF-8'); ?>" data-visible="<?php echo (!isset($event['visible']) || $event['visible'] !== false) ? 'true' : 'false'; ?>" title="<?php echo (!isset($event['visible']) || $event['visible'] !== false) ? 'Hide Event' : 'Show Event'; ?>">
+                                                <?php 
+                                                $isVisible = !isset($event['visible']) || $event['visible'] !== false;
+                                                if($isVisible): ?>
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                        <circle cx="12" cy="12" r="3"></circle>
+                                                    </svg>
+                                                <?php else: ?>
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                                                    </svg>
+                                                <?php endif; ?>
+                                            </button>
+                                            <button class="btn-icon edit-event-btn" data-slug="<?php echo htmlspecialchars($event['slug'], ENT_QUOTES, 'UTF-8'); ?>" title="Edit">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </button>
+                                            <button class="btn-icon delete-event-btn" data-slug="<?php echo htmlspecialchars($event['slug'], ENT_QUOTES, 'UTF-8'); ?>" title="Delete">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <?php 
+                                        $isVisible = !isset($event['visible']) || $event['visible'] !== false;
+                                        $visibilityClass = $isVisible ? 'event-visible' : 'event-hidden';
+                                        $visibilityText = $isVisible ? 'Visible' : 'Hidden';
+                                        ?>
+                                        <span class="event-visibility-badge <?php echo $visibilityClass; ?>" title="Event is <?php echo strtolower($visibilityText); ?> on the website">
+                                            <?php echo $visibilityText; ?>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="event-card-body">
@@ -232,6 +280,12 @@
             const eventAction = document.getElementById('eventAction');
             const eventSlug = document.getElementById('eventSlug');
             const searchEvents = document.getElementById('searchEvents');
+            const uploadImageBtn = document.getElementById('uploadImageBtn');
+            const eventImageUpload = document.getElementById('event_image_upload');
+            const eventImage = document.getElementById('event_image');
+            const imagePreview = document.getElementById('imagePreview');
+            const previewImg = document.getElementById('previewImg');
+            const previewFilename = document.getElementById('previewFilename');
 
             // Open modal for adding
             if(addEventBtn) {
@@ -267,6 +321,15 @@
                 });
             });
 
+            // Toggle visibility buttons
+            document.querySelectorAll('.toggle-visibility-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const slug = this.getAttribute('data-slug');
+                    const currentVisible = this.getAttribute('data-visible') === 'true';
+                    toggleEventVisibility(slug, !currentVisible);
+                });
+            });
+
             // Search functionality
             if(searchEvents) {
                 searchEvents.addEventListener('input', function() {
@@ -280,6 +343,102 @@
                             card.style.display = 'none';
                         }
                     });
+                });
+            }
+
+            // Image upload functionality
+            if(uploadImageBtn && eventImageUpload) {
+                uploadImageBtn.addEventListener('click', function() {
+                    eventImageUpload.click();
+                });
+
+                eventImageUpload.addEventListener('change', function() {
+                    if(this.files && this.files[0]) {
+                        const file = this.files[0];
+                        
+                        // Validate file size (5MB max)
+                        if(file.size > 5242880) {
+                            alert('File size must be less than 5MB');
+                            this.value = '';
+                            return;
+                        }
+
+                        // Validate file type
+                        const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/avif'];
+                        if(!allowedTypes.includes(file.type)) {
+                            alert('Please upload a valid image file (JPG, PNG, GIF, WebP, or AVIF)');
+                            this.value = '';
+                            return;
+                        }
+
+                        // Show preview
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            previewImg.src = e.target.result;
+                            imagePreview.style.display = 'block';
+                        };
+                        reader.readAsDataURL(file);
+
+                        // Upload the file
+                        const formData = new FormData();
+                        formData.append('image', file);
+                        formData.append('csrf_token', document.querySelector('[name="csrf_token"]')?.value || '');
+
+                        // Show loading state
+                        uploadImageBtn.disabled = true;
+                        uploadImageBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem; animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path></svg>Uploading...';
+
+                        fetch('<?php echo Base_URL; ?>/dashboard/uploadImage', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            uploadImageBtn.disabled = false;
+                            uploadImageBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>Upload Image';
+
+                            if(data.success) {
+                                // Set the filename in the input field
+                                eventImage.value = data.filename;
+                                previewFilename.textContent = 'Uploaded: ' + data.filename;
+                                previewImg.src = data.url;
+                                alert('Image uploaded successfully!');
+                            } else {
+                                alert('Error: ' + data.message);
+                                imagePreview.style.display = 'none';
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            uploadImageBtn.disabled = false;
+                            uploadImageBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>Upload Image';
+                            alert('An error occurred while uploading the image. Please try again.');
+                            imagePreview.style.display = 'none';
+                        });
+                    }
+                });
+            }
+
+            // Show preview when typing existing filename
+            if(eventImage) {
+                eventImage.addEventListener('input', function() {
+                    const filename = this.value.trim();
+                    if(filename) {
+                        previewImg.src = '<?php echo Base_URL; ?>/images/' + encodeURIComponent(filename);
+                        previewFilename.textContent = 'Filename: ' + filename;
+                        imagePreview.style.display = 'block';
+                        
+                        // Check if image exists
+                        previewImg.onerror = function() {
+                            previewFilename.textContent = 'Image not found: ' + filename;
+                            previewFilename.style.color = '#e53e3e';
+                        };
+                        previewImg.onload = function() {
+                            previewFilename.style.color = '#718096';
+                        };
+                    } else {
+                        imagePreview.style.display = 'none';
+                    }
                 });
             }
 
@@ -325,11 +484,46 @@
                 } else if(eventData) {
                     document.getElementById('event_title').value = eventData.title || '';
                     document.getElementById('event_description').value = eventData.description || '';
-                    document.getElementById('event_date').value = eventData.date || '';
-                    document.getElementById('event_time').value = eventData.time || '';
+                    
+                    // Convert date format from "March 27, 2025" to "2025-03-27" for date input
+                    let dateValue = '';
+                    if(eventData.date) {
+                        const dateObj = new Date(eventData.date);
+                        if(!isNaN(dateObj.getTime())) {
+                            dateValue = dateObj.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+                        }
+                    }
+                    document.getElementById('event_date').value = dateValue || '';
+                    
+                    // Extract time from time field (e.g., "7:30 PM - 9:00 PM EST" -> "19:30")
+                    let timeValue = '';
+                    if(eventData.time) {
+                        // Try to extract start time from formats like "7:30 PM - 9:00 PM EST" or "7:30 PM"
+                        const timeMatch = eventData.time.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+                        if(timeMatch) {
+                            let hours = parseInt(timeMatch[1]);
+                            const minutes = timeMatch[2];
+                            const ampm = timeMatch[3].toUpperCase();
+                            if(ampm === 'PM' && hours !== 12) hours += 12;
+                            if(ampm === 'AM' && hours === 12) hours = 0;
+                            timeValue = String(hours).padStart(2, '0') + ':' + minutes;
+                        }
+                    }
+                    document.getElementById('event_time').value = timeValue || '';
+                    
                     document.getElementById('event_location').value = eventData.location || '';
-                    document.getElementById('event_image').value = eventData.image || '';
+                    const imageValue = eventData.image || '';
+                    document.getElementById('event_image').value = imageValue;
                     eventSlug.value = eventData.slug || '';
+                    
+                    // Show preview if image exists
+                    if(imageValue) {
+                        previewImg.src = '<?php echo Base_URL; ?>/images/' + encodeURIComponent(imageValue);
+                        previewFilename.textContent = 'Current image: ' + imageValue;
+                        imagePreview.style.display = 'block';
+                    } else {
+                        imagePreview.style.display = 'none';
+                    }
                     
                     if(eventData.startDate) {
                         const startDate = new Date(eventData.startDate);
@@ -389,6 +583,30 @@
                     closeEventModalFunc();
                 }
             });
+
+            function toggleEventVisibility(slug, visible) {
+                const formData = new FormData();
+                formData.append('slug', slug);
+                formData.append('visible', visible);
+                formData.append('csrf_token', document.querySelector('[name="csrf_token"]')?.value || '');
+
+                fetch('<?php echo Base_URL; ?>/dashboard/toggleEventVisibility', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.success) {
+                        location.reload();
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                });
+            }
         });
     </script>
     <script src="<?php echo Base_URL; ?>/js/dashboard.js"></script>

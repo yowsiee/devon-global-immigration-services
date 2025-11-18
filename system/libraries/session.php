@@ -14,9 +14,10 @@ trait Session {
         
         // Set secure session parameters
         ini_set('session.cookie_httponly', '1');
-        ini_set('session.cookie_secure', isset($_SERVER['HTTPS']) ? '1' : '0');
+        ini_set('session.cookie_secure', isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? '1' : '0');
         ini_set('session.use_only_cookies', '1');
         ini_set('session.cookie_samesite', 'Strict');
+        ini_set('session.use_strict_mode', '1');
         
         // Set session timeout (30 minutes)
         ini_set('session.gc_maxlifetime', 1800);
@@ -34,6 +35,16 @@ trait Session {
                 session_regenerate_id(true);
                 $_SESSION['created'] = time();
             }
+        }
+    }
+    
+    /**
+     * Regenerate session ID (call after login)
+     */
+    public function regenerateSession(){
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            session_regenerate_id(true);
+            $_SESSION['created'] = time();
         }
     }
 

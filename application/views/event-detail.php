@@ -37,7 +37,12 @@ include __DIR__ . '/partials/header.php';
 <section class="events-hero-section">
     <div class="container">
         <div class="event-detail-breadcrumb">
-            <a href="<?php echo Base_URL; ?>/events" class="breadcrumb-link">← Back to Events</a>
+            <a href="<?php echo Base_URL; ?>/events" class="breadcrumb-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Events
+            </a>
         </div>
         <h1 class="events-main-title"><?php echo htmlspecialchars($event['title']); ?></h1>
     </div>
@@ -121,23 +126,7 @@ include __DIR__ . '/partials/header.php';
             <div class="event-description">
                 <h3>About This Event</h3>
                 <p>
-                    Join us for an informative online seminar on the Express Entry pathway to Canadian Permanent Residency. 
-                    This comprehensive session will cover everything you need to know about the Express Entry system, including:
-                </p>
-                <ul class="event-topics-list">
-                    <li>Understanding the Express Entry system and how it works</li>
-                    <li>Eligibility requirements for Federal Skilled Worker, Federal Skilled Trades, and Canadian Experience Class programs</li>
-                    <li>How to create and optimize your Express Entry profile</li>
-                    <li>Comprehensive Ranking System (CRS) score calculation and improvement strategies</li>
-                    <li>Document preparation and application process</li>
-                    <li>Provincial Nominee Program (PNP) integration with Express Entry</li>
-                    <li>Common mistakes to avoid and tips for success</li>
-                    <li>Q&A session with our licensed RCIC consultants</li>
-                </ul>
-                <h3>Who Should Attend?</h3>
-                <p>
-                    This event is perfect for individuals who are considering immigrating to Canada through the Express Entry system, 
-                    including skilled workers, international graduates, and those with Canadian work experience.
+                    <?php echo nl2br(htmlspecialchars($event['description'], ENT_QUOTES, 'UTF-8')); ?>
                 </p>
                 <h3>Registration</h3>
                 <p>

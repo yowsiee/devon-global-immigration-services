@@ -1,0 +1,19 @@
+[
+    {
+        "id": "newsletter_65a1b2c3d4e5f",
+        "title": "February 2024",
+        "date": "2024-02-01",
+        "file": "1763438327_70a7015c41e1ca43_January2024.pdf",
+        "visible": true,
+        "created_at": "2024-02-01 10:00:00",
+        "updated_at": "2025-11-18 04:58:51"
+    },
+    {
+        "id": "newsletter_691bf0b83505b",
+        "title": "November 2023",
+        "date": "2025-11-19",
+        "file": "1763438766_e72d3d2045a1a8dc_November2023.pdf",
+        "visible": true,
+        "created_at": "2025-11-18 05:06:16",
+        "updated_at": "2025-11-18 05:06:16"
+    }

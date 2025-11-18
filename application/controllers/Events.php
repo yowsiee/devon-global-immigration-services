@@ -11,6 +11,11 @@ class Events extends Controller {
             $allEvents = json_decode(file_get_contents($eventsFile), true) ?? [];
         }
         
+        // Filter out hidden events (only show visible events on public page)
+        $allEvents = array_filter($allEvents, function($event) {
+            return !isset($event['visible']) || $event['visible'] !== false;
+        });
+        
         // Sort events by date (newest first)
         usort($allEvents, function($a, $b) {
             return strtotime($b['startDate'] ?? '1970-01-01') - strtotime($a['startDate'] ?? '1970-01-01');
@@ -47,9 +52,14 @@ class Events extends Controller {
             $allEvents = json_decode(file_get_contents($eventsFile), true) ?? [];
         }
         
-        // Check if slug exists in events
+        // Check if slug exists in events and is visible
         foreach($allEvents as $event) {
             if(isset($event['slug']) && $event['slug'] === $slug) {
+                // Check if event is visible
+                if(isset($event['visible']) && $event['visible'] === false) {
+                    header('Location: ' . Base_URL . '/events');
+                    exit;
+                }
                 $this->showEventDetail($slug);
                 return;
             }
@@ -73,6 +83,11 @@ class Events extends Controller {
         $event = null;
         foreach($allEvents as $e) {
             if(isset($e['slug']) && $e['slug'] === $eventSlug) {
+                // Check if event is visible
+                if(isset($e['visible']) && $e['visible'] === false) {
+                    header('Location: ' . Base_URL . '/events');
+                    exit;
+                }
                 $event = $e;
                 break;
             }

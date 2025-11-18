@@ -201,8 +201,8 @@ include __DIR__ . '/partials/header.php';
             </ul>
             <p class="rcic-note">
                 An RCIC must have an RCIC-IM client of license to represent you before the Immigration and Refugee Board of Canada.
-            </p>
-        </div>
+                </p>
+            </div>
     </div>
 </section>
 
@@ -250,29 +250,31 @@ include __DIR__ . '/partials/header.php';
                     ?>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="about_first_name">Name</label>
+                            <label for="about_first_name">NAME</label>
                             <input type="text" id="about_first_name" name="first_name" class="form-input" required>
                         </div>
                         <div class="form-group">
-                            <label for="about_last_name">Last Name</label>
+                            <label for="about_last_name">LAST NAME</label>
                             <input type="text" id="about_last_name" name="last_name" class="form-input" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="about_email">Email</label>
+                            <label for="about_email">EMAIL</label>
                             <input type="email" id="about_email" name="email" class="form-input" required>
                         </div>
                         <div class="form-group">
-                            <label for="about_phone">Phone</label>
+                            <label for="about_phone">PHONE</label>
                             <input type="tel" id="about_phone" name="phone" class="form-input" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="about_message">Message</label>
-                        <textarea id="about_message" name="message" class="form-input form-textarea" rows="5" required></textarea>
+                        <label for="about_message">MESSAGE</label>
+                        <textarea id="about_message" name="message" class="form-input form-textarea form-textarea-red-border" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn-form-submit">Send</button>
+                    <div class="form-submit-wrapper">
+                        <button type="submit" class="btn-form-submit">SEND</button>
+                </div>
                 </form>
                 <p class="form-disclaimer">
                     We are a proudly registered and licensed business offering immigration legal services. We are not affiliated with any 

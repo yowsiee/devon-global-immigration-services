@@ -1,0 +1,44 @@
+[
+    {
+        "slug": "canadian-permanent-residency-express-entry-pathway",
+        "title": "Canadian Permanent Residency: Express Entry Pathway",
+        "description": "Join us for an informative online seminar about the Express Entry system and how to successfully apply for Canadian Permanent Residency. Our licensed RCIC consultants will guide you through the process, eligibility requirements, and provide tips to improve your Comprehensive Ranking System (CRS) score.",
+        "date": "March 27, 2025",
+        "time": "7:30 PM - 9:00 PM EST",
+        "location": "Zoom Online",
+        "image": "event-application-form.png",
+        "startDate": "2025-03-27T19:30:00",
+        "endDate": "2025-03-27T21:00:00",
+        "visible": false,
+        "created_at": "2025-01-15 10:00:00",
+        "updated_at": "2025-11-18 04:46:56"
+    },
+    {
+        "slug": "family-sponsorship-canada",
+        "title": "Family Sponsorship to Canada: Complete Guide",
+        "description": "Learn everything you need to know about sponsoring your family members to come to Canada. This comprehensive workshop covers spouse\/common-law partner sponsorship, dependent children, parents and grandparents programs, and super visa options. Our experts will explain eligibility requirements, processing times, and required documentation.",
+        "date": "April 10, 2025",
+        "time": "6:00 PM - 7:30 PM EST",
+        "location": "Zoom Online",
+        "image": "event-application-form.png",
+        "startDate": "2025-04-10T18:00:00",
+        "endDate": "2025-04-10T19:30:00",
+        "visible": false,
+        "created_at": "2025-01-20 14:30:00",
+        "updated_at": "2025-11-18 04:46:46"
+    },
+    {
+        "slug": "study-permit-success-strategies",
+        "title": "Study Permit Success Strategies for International Students",
+        "description": "Planning to study in Canada? This event is perfect for prospective international students. We&apos;ll cover study permit application requirements, financial proof, letter of acceptance, study plan, and tips for a successful application. Learn about post-graduation work permits and pathways to permanent residency.",
+        "date": "2025-04-24",
+        "time": "19:00",
+        "location": "Zoom Online",
+        "image": "1763437557_5f593e99a7574036_laptop.png",
+        "startDate": "2025-04-24T23:00",
+        "endDate": "2025-04-25T00:30",
+        "visible": false,
+        "created_at": "2025-01-25 09:15:00",
+        "updated_at": "2025-11-18 04:46:55"
+    }
+]

@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
     <title><?php echo isset($seo['title']) ? htmlspecialchars($seo['title'], ENT_QUOTES, 'UTF-8') : (isset($title) ? htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . ' - Devon Global Immigration Services' : 'Devon Global Immigration Services | Licensed Canadian Immigration Consultants Toronto'); ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="<?php echo Base_URL; ?>/css/style.css">
     <link rel="icon" type="image/png" href="<?php echo Base_URL; ?>/images/logo.png">
     <link rel="apple-touch-icon" href="<?php echo Base_URL; ?>/images/logo.png">
@@ -76,9 +79,9 @@
                     <a href="<?php echo Base_URL; ?>/about" class="nav-link" aria-label="About Us">ABOUT US</a>
                 </li>
                 <li class="dropdown">
-                    <a href="<?php echo Base_URL; ?>/services" class="nav-link" aria-label="Services" aria-haspopup="true" aria-expanded="false">
+                    <a href="#" class="nav-link" aria-label="Services" aria-haspopup="true" aria-expanded="false" role="button" tabindex="0" id="servicesDropdown">
                         SERVICES
-                        <span class="dropdown-arrow">▼</span>
+                        <span class="dropdown-arrow" aria-hidden="true">▼</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
@@ -101,9 +104,13 @@
                 <li>
                     <a href="<?php echo Base_URL; ?>/events" class="nav-link" aria-label="Events">EVENTS</a>
                 </li>
+                <li>
+                    <a href="<?php echo Base_URL; ?>/newsletters" class="nav-link" aria-label="Newsletters">NEWSLETTERS</a>
+                </li>
             </ul>
             
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" style="display: none;">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button" style="display: none;">
+                <span class="sr-only">Menu</span>
                 <span></span>
                 <span></span>
                 <span></span>
