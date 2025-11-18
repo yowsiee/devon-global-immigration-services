@@ -11,20 +11,20 @@ if (!function_exists('seo_meta_tags')) {
      */
     function seo_meta_tags($data = []) {
         $defaults = [
-            'title' => 'Dev\'s Domain - Professional IT Solutions & Web Development Services',
-            'description' => 'Dev\'s Domain offers professional IT solutions, web development, mobile apps, API integrations, and business process automation. Transform your business with digital excellence.',
-            'keywords' => 'web development, mobile app development, IT services, API integration, business automation, PowerApps, LogicApps, custom software',
-            'author' => 'Dev\'s Domain',
+            'title' => 'Devon Global Immigration Services - Licensed Canadian Immigration Consultants',
+            'description' => 'Devon Global Immigration Services offers professional immigration services to Canada and the United States. Licensed RCIC consultants providing expert guidance for study permits, work permits, Express Entry, permanent residence, and citizenship.',
+            'keywords' => 'Canadian immigration, immigration consultant Toronto, study permit Canada, work permit Canada, Express Entry, permanent residence Canada, family sponsorship, Canadian citizenship, RCIC consultant, Devon Global Immigration Services',
+            'author' => 'Devon Global Immigration Services',
             'image' => Base_URL . '/images/og-image.jpg',
             'url' => Base_URL . (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : ''),
             'type' => 'website',
-            'site_name' => 'Dev\'s Domain',
+            'site_name' => 'Devon Global Immigration Services',
             'locale' => 'en_US',
             'canonical' => null,
             'robots' => 'index, follow',
             'og_type' => 'website',
             'twitter_card' => 'summary_large_image',
-            'twitter_site' => '@devsdomain'
+            'twitter_site' => '@devonglobalimmigration'
         ];
         
         $seo = array_merge($defaults, $data);
@@ -68,8 +68,8 @@ if (!function_exists('seo_meta_tags')) {
         }
         
         // Additional SEO Meta Tags
-        $output .= '<meta name="theme-color" content="#4c51bf">' . "\n";
-        $output .= '<meta name="msapplication-TileColor" content="#4c51bf">' . "\n";
+        $output .= '<meta name="theme-color" content="#1B3358">' . "\n";
+        $output .= '<meta name="msapplication-TileColor" content="#1B3358">' . "\n";
         $output .= '<meta name="apple-mobile-web-app-capable" content="yes">' . "\n";
         $output .= '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">' . "\n";
         
@@ -83,18 +83,18 @@ if (!function_exists('seo_structured_data')) {
      */
     function seo_structured_data($type = 'Organization', $data = []) {
         $defaults = [
-            'name' => 'Dev\'s Domain',
+            'name' => 'Devon Global Immigration Services',
             'url' => Base_URL,
             'logo' => Base_URL . '/images/logo.png',
-            'description' => 'Professional IT solutions and web development services',
-            'email' => 'info@devsdomain.com',
-            'phone' => '+1 (555) 123-4567',
+            'description' => 'Licensed immigration consultants helping you achieve your Canadian immigration goals',
+            'email' => 'canada@ttworktravel.com',
+            'phone' => '347-324-7220',
             'address' => [
-                'streetAddress' => '25 Maracas Avenue, Xavien Plaza Heights',
-                'addressLocality' => 'Arima',
-                'addressRegion' => 'Trinidad and Tobago',
-                'postalCode' => '',
-                'addressCountry' => 'TT'
+                'streetAddress' => '5-112 Elizabeth St.',
+                'addressLocality' => 'Toronto',
+                'addressRegion' => 'ON',
+                'postalCode' => 'M5G1P9',
+                'addressCountry' => 'CA'
             ],
             'sameAs' => [
                 // Add social media links here
@@ -150,7 +150,7 @@ if (!function_exists('seo_structured_data')) {
             $json = [
                 '@context' => 'https://schema.org',
                 '@type' => 'Service',
-                'serviceType' => $structured['serviceType'] ?? 'IT Services',
+                'serviceType' => $structured['serviceType'] ?? 'Immigration Services',
                 'provider' => [
                     '@type' => 'Organization',
                     'name' => $structured['name']

@@ -11,7 +11,7 @@ class Login extends Lightweight {
 		}
 		
 		$data = [
-			'title' => 'Login - Dev\'s Domain',
+			'title' => 'Login - Devon Global Immigration Services',
 			'page' => 'login',
 			'error' => null
 		];
@@ -31,7 +31,7 @@ class Login extends Lightweight {
 			
 			// Check credentials (for demo, using simple check)
 			// In production, verify against database
-			if($email === 'admin@devsdomain.com' && $password === 'admin123'){
+			if($email === 'admin@dgis.com' && $password === 'admin123'){
 				$this->set_session('user_id', 1);
 				$this->set_session('user_name', 'admin');
 				$this->set_session('user_email', $email);
@@ -45,7 +45,7 @@ class Login extends Lightweight {
 			
 		} catch (Exception $e) {
 			$data = [
-				'title' => 'Login - Dev\'s Domain',
+				'title' => 'Login - Devon Global Immigration Services',
 				'page' => 'login',
 				'error' => $e->getMessage()
 			];

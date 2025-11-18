@@ -134,7 +134,7 @@ $hasSitemapDirective = $robotsTxt && strpos($robotsTxt, 'Sitemap:') !== false;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO Testing Results - Dev's Domain</title>
+    <title>SEO Testing Results - Devon Global Immigration Services</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {

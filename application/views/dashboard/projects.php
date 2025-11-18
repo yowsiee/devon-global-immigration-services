@@ -11,7 +11,10 @@
     <!-- Sidebar -->
     <aside class="dashboard-sidebar">
         <div class="sidebar-header">
-            <h2>Dev's Domain</h2>
+            <div class="sidebar-logo">
+                <img src="<?php echo Base_URL; ?>/images/logo.png" alt="DGIS Logo" onerror="this.style.display='none';">
+            </div>
+            <h2>DGIS</h2>
             <p>Admin Dashboard</p>
         </div>
         <nav class="sidebar-nav">

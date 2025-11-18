@@ -148,7 +148,7 @@ include __DIR__ . '/partials/header.php';
     <div class="container">
         <div class="service-detail-header">
             <div class="service-detail-icon">🚀</div>
-            <h2 class="service-detail-title">Why Choose Dev's Domain</h2>
+            <h2 class="service-detail-title">Why Choose Devon Global Immigration Services</h2>
         </div>
         <div class="service-benefits-grid">
             <div class="service-benefit-item">
