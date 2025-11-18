@@ -1,15 +1,15 @@
 <?php
 /**
  * SEO Testing Tool
- * Visit: http://localhost/lightweight/test-seo.php
+ * Visit: http://localhost/DGIS/public/test-seo.php
  */
 
-$baseUrl = 'http://localhost/lightweight';
+$baseUrl = 'http://localhost/DGIS/public';
 $pages = [
     '' => 'Home',
     'about' => 'About',
     'services' => 'Services',
-    'portfolio' => 'Portfolio',
+    'events' => 'Events',
     'contact' => 'Contact'
 ];
 
@@ -148,7 +148,7 @@ $hasSitemapDirective = $robotsTxt && strpos($robotsTxt, 'Sitemap:') !== false;
             margin: 0 auto;
         }
         h1 {
-            color: #4c51bf;
+            color: #1B3358;
             margin-bottom: 2rem;
         }
         .test-section {
@@ -210,7 +210,7 @@ $hasSitemapDirective = $robotsTxt && strpos($robotsTxt, 'Sitemap:') !== false;
         .summary-card .value {
             font-size: 2rem;
             font-weight: 700;
-            color: #4c51bf;
+            color: #1B3358;
         }
         code {
             background: #f7fafc;
