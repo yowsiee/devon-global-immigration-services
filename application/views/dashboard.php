@@ -11,7 +11,10 @@
     <!-- Sidebar -->
     <aside class="dashboard-sidebar">
         <div class="sidebar-header">
-            <h2>Dev's Domain</h2>
+            <div class="sidebar-logo">
+                <img src="<?php echo Base_URL; ?>/images/logo.png" alt="DGIS Logo" onerror="this.style.display='none';">
+            </div>
+            <h2>DGIS</h2>
             <p>Admin Dashboard</p>
         </div>
         <nav class="sidebar-nav">
@@ -22,26 +25,6 @@
                 </svg>
                 <span>Dashboard</span>
             </a>
-            <a href="<?php echo Base_URL; ?>/dashboard/profile" class="nav-item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
-                    <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                </svg>
-                <span>Profile</span>
-            </a>
-            <a href="<?php echo Base_URL; ?>/dashboard/projects" class="nav-item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-                <span>Projects</span>
-            </a>
-            <a href="<?php echo Base_URL; ?>/dashboard/announcements" class="nav-item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2"/>
-                    <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2"/>
-                </svg>
-                <span>Announcements</span>
-            </a>
             <a href="<?php echo Base_URL; ?>/dashboard/services" class="nav-item">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
@@ -49,27 +32,14 @@
                 </svg>
                 <span>Services</span>
             </a>
-            <a href="<?php echo Base_URL; ?>/dashboard/portfolio" class="nav-item">
+            <a href="<?php echo Base_URL; ?>/dashboard/events" class="nav-item">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2"/>
-                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke="currentColor" stroke-width="2"/>
-                    <line x1="12" y1="22.08" x2="12" y2="12" stroke="currentColor" stroke-width="2"/>
+                    <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/>
+                    <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/>
+                    <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
                 </svg>
-                <span>Portfolio</span>
-            </a>
-            <a href="<?php echo Base_URL; ?>/dashboard/advertisements" class="nav-item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                    <path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/>
-                </svg>
-                <span>Advertisements</span>
-            </a>
-            <a href="<?php echo Base_URL; ?>/dashboard/settings" class="nav-item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                    <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3" stroke="currentColor" stroke-width="2"/>
-                </svg>
-                <span>Settings</span>
+                <span>Events</span>
             </a>
             <div class="nav-divider"></div>
             <a href="<?php echo Base_URL; ?>/login/logout" class="nav-item nav-item-logout">
@@ -96,41 +66,15 @@
                     <input type="text" placeholder="Search dashboard...">
                 </div>
             </div>
-            <div class="header-center">
-                <nav class="dashboard-top-menu">
-                    <a href="<?php echo Base_URL; ?>" class="top-menu-link" title="Home">
-                        <span class="nav-icon">🏠</span>
-                        <span class="nav-text">Home</span>
-                    </a>
-                    <a href="<?php echo Base_URL; ?>/about" class="top-menu-link" title="About Us">
-                        <span class="nav-icon">ℹ️</span>
-                        <span class="nav-text">About</span>
-                    </a>
-                    <a href="<?php echo Base_URL; ?>/services" class="top-menu-link" title="Services">
-                        <span class="nav-icon">⚙️</span>
-                        <span class="nav-text">Services</span>
-                    </a>
-                    <a href="<?php echo Base_URL; ?>/portfolio" class="top-menu-link" title="Portfolio">
-                        <span class="nav-icon">💼</span>
-                        <span class="nav-text">Portfolio</span>
-                    </a>
-                    <a href="<?php echo Base_URL; ?>/contact" class="top-menu-link" title="Contact">
-                        <span class="nav-icon">✉️</span>
-                        <span class="nav-text">Contact</span>
-                    </a>
-                </nav>
-            </div>
             <div class="header-right">
-                <div class="header-time">
-                    <span id="current-time"></span>
-                    <span id="current-date"></span>
-                </div>
-                <button class="header-icon-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2"/>
-                        <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2"/>
+                <a href="<?php echo Base_URL; ?>" class="header-view-site" target="_blank" title="View Website">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
                     </svg>
-                </button>
+                    <span>View Site</span>
+                </a>
                 <div class="header-user">
                     <div class="user-avatar">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -148,62 +92,73 @@
 
         <!-- Content Area -->
         <main class="dashboard-content">
-            <h1 class="welcome-message">Welcome back, <?php echo htmlspecialchars($user_name ?? 'admin', ENT_QUOTES, 'UTF-8'); ?>! 👋</h1>
+            <div class="dashboard-welcome-section">
+                <div class="welcome-content">
+                    <h1 class="welcome-message">Welcome back, <?php echo htmlspecialchars($user_name ?? 'admin', ENT_QUOTES, 'UTF-8'); ?>!</h1>
+                    <p class="welcome-subtitle">Manage your immigration services, events, and content from one place.</p>
+                </div>
+            </div>
             
             <!-- Stats Cards -->
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-icon stat-icon-orange">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
-                            <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2"/>
+                    <div class="stat-icon-wrapper stat-icon-navy">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
                         </svg>
                     </div>
                     <div class="stat-content">
-                        <div class="stat-number"><?php echo $stats['total_projects'] ?? 7; ?></div>
-                        <div class="stat-label">Total Projects</div>
-                        <div class="stat-change positive">+0% from last month</div>
+                        <div class="stat-number"><?php echo $stats['total_events'] ?? 0; ?></div>
+                        <div class="stat-label">Total Events</div>
+                        <div class="stat-change"><?php echo $stats['upcoming_events'] ?? 0; ?> upcoming</div>
                     </div>
                 </div>
                 
                 <div class="stat-card">
-                    <div class="stat-icon stat-icon-green">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2"/>
+                    <div class="stat-icon-wrapper stat-icon-red">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/>
                         </svg>
                     </div>
                     <div class="stat-content">
-                        <div class="stat-number"><?php echo $stats['active_announcements'] ?? 3; ?></div>
-                        <div class="stat-label">Active Announcements</div>
-                        <div class="stat-change positive">+0% from last week</div>
+                        <div class="stat-number"><?php echo $stats['upcoming_events'] ?? 0; ?></div>
+                        <div class="stat-label">Upcoming Events</div>
+                        <div class="stat-change">Scheduled events</div>
                     </div>
                 </div>
                 
                 <div class="stat-card">
-                    <div class="stat-icon stat-icon-purple">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                            <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24" stroke="currentColor" stroke-width="2"/>
+                    <div class="stat-icon-wrapper stat-icon-navy">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
                         </svg>
                     </div>
                     <div class="stat-content">
-                        <div class="stat-number"><?php echo $stats['active_services'] ?? 3; ?></div>
+                        <div class="stat-number"><?php echo $stats['active_services'] ?? 0; ?></div>
                         <div class="stat-label">Active Services</div>
-                        <div class="stat-change positive">+2 new this month</div>
+                        <div class="stat-change"><?php echo $stats['total_services'] ?? 5; ?> total services</div>
                     </div>
                 </div>
                 
                 <div class="stat-card">
-                    <div class="stat-icon stat-icon-red">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                            <path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/>
+                    <div class="stat-icon-wrapper stat-icon-red">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
                         </svg>
                     </div>
                     <div class="stat-content">
-                        <div class="stat-number"><?php echo $stats['active_ads'] ?? 4; ?></div>
-                        <div class="stat-label">Active Ads</div>
-                        <div class="stat-change positive">+5% engagement</div>
+                        <div class="stat-number"><?php echo $stats['total_services'] ?? 5; ?></div>
+                        <div class="stat-label">Service Categories</div>
+                        <div class="stat-change">Main services</div>
                     </div>
                 </div>
             </div>
@@ -213,56 +168,59 @@
                 <div class="quick-actions-section">
                     <h2 class="section-title">Quick Actions</h2>
                     <div class="quick-actions-grid">
-                        <a href="<?php echo Base_URL; ?>/dashboard/projects/new" class="quick-action-btn quick-action-orange">
+                        <a href="<?php echo Base_URL; ?>/dashboard/events" class="quick-action-btn">
                             <div class="action-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="12" y1="8" x2="12" y2="16" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="8" y1="12" x2="16" y2="12" stroke="currentColor" stroke-width="2"/>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
                                 </svg>
                             </div>
                             <div class="action-content">
-                                <h3>New Project</h3>
-                                <p>Create a new project</p>
+                                <h3>Manage Events</h3>
+                                <p>Add or edit upcoming events</p>
                             </div>
                         </a>
                         
-                        <a href="<?php echo Base_URL; ?>/dashboard/announcements/new" class="quick-action-btn quick-action-green">
+                        <a href="<?php echo Base_URL; ?>/dashboard/services" class="quick-action-btn">
                             <div class="action-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2"/>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
                                 </svg>
                             </div>
                             <div class="action-content">
-                                <h3>New Announcement</h3>
-                                <p>Post an announcement</p>
+                                <h3>Manage Services</h3>
+                                <p>Update service information</p>
                             </div>
                         </a>
                         
-                        <a href="<?php echo Base_URL; ?>/dashboard/services/new" class="quick-action-btn quick-action-purple">
+                        <a href="<?php echo Base_URL; ?>/events" target="_blank" class="quick-action-btn">
                             <div class="action-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24" stroke="currentColor" stroke-width="2"/>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                    <polyline points="15 3 21 3 21 9"/>
+                                    <line x1="10" y1="14" x2="21" y2="3"/>
                                 </svg>
                             </div>
                             <div class="action-content">
-                                <h3>Add Service</h3>
-                                <p>Create a new service</p>
+                                <h3>View Events Page</h3>
+                                <p>See events on the website</p>
                             </div>
                         </a>
                         
-                        <a href="<?php echo Base_URL; ?>/dashboard/advertisements/new" class="quick-action-btn quick-action-red">
+                        <a href="<?php echo Base_URL; ?>/services" target="_blank" class="quick-action-btn">
                             <div class="action-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                    <polyline points="15 3 21 3 21 9"/>
+                                    <line x1="10" y1="14" x2="21" y2="3"/>
                                 </svg>
                             </div>
                             <div class="action-content">
-                                <h3>Create Ad</h3>
-                                <p>Launch a new campaign</p>
+                                <h3>View Services Page</h3>
+                                <p>See services on the website</p>
                             </div>
                         </a>
                     </div>
@@ -271,15 +229,40 @@
                 <div class="recent-activity-section">
                     <h2 class="section-title">Recent Activity</h2>
                     <div class="activity-list">
-                        <?php foreach($recent_activity ?? [] as $activity): ?>
-                        <div class="activity-item">
-                            <div class="activity-icon activity-<?php echo htmlspecialchars($activity['type'], ENT_QUOTES, 'UTF-8'); ?>"></div>
-                            <div class="activity-content">
-                                <p class="activity-message"><?php echo htmlspecialchars($activity['message'], ENT_QUOTES, 'UTF-8'); ?></p>
-                                <span class="activity-time"><?php echo htmlspecialchars($activity['time'], ENT_QUOTES, 'UTF-8'); ?></span>
+                        <?php if(empty($recent_activity)): ?>
+                            <div class="activity-empty">
+                                <p>No recent activity</p>
                             </div>
-                        </div>
-                        <?php endforeach; ?>
+                        <?php else: ?>
+                            <?php foreach($recent_activity as $activity): ?>
+                            <div class="activity-item">
+                                <div class="activity-icon-badge activity-<?php echo htmlspecialchars($activity['type'], ENT_QUOTES, 'UTF-8'); ?>">
+                                    <?php if($activity['type'] === 'event'): ?>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                            <line x1="16" y1="2" x2="16" y2="6"/>
+                                            <line x1="8" y1="2" x2="8" y2="6"/>
+                                            <line x1="3" y1="10" x2="21" y2="10"/>
+                                        </svg>
+                                    <?php elseif($activity['type'] === 'service'): ?>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="3"/>
+                                            <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+                                        </svg>
+                                    <?php else: ?>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <polyline points="12 6 12 12 16 14"/>
+                                        </svg>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="activity-content">
+                                    <p class="activity-message"><?php echo htmlspecialchars($activity['message'], ENT_QUOTES, 'UTF-8'); ?></p>
+                                    <span class="activity-time"><?php echo htmlspecialchars($activity['time'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                </div>
+                            </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

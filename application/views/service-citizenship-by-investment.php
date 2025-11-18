@@ -71,7 +71,7 @@ include __DIR__ . '/partials/header.php';
 <!-- Hero Image Section -->
 <section class="cbi-hero-image">
     <div class="cbi-hero-image-wrapper">
-        <img src="<?php echo Base_URL; ?>/images/citizenship-by-investment-hero.jpg" alt="Citizenship by Investment - United Nations Flags" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="<?php echo Base_URL; ?>/images/citizenshipInvestment.png" alt="Citizenship by Investment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="cbi-hero-placeholder" style="display: none; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(27, 51, 88, 0.3) 0%, rgba(213, 16, 43, 0.3) 100%); min-height: 400px; align-items: center; justify-content: center;">
             <div style="text-align: center; color: white;">
                 <div style="font-size: 4rem; margin-bottom: 1rem;">🌍</div>
@@ -103,7 +103,7 @@ include __DIR__ . '/partials/header.php';
             <!-- Antigua and Barbuda -->
             <div class="cbi-country-card">
                 <div class="cbi-country-flag">
-                    <img src="<?php echo Base_URL; ?>/images/flags/antigua-barbuda.png" alt="Antigua and Barbuda Flag" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <img src="<?php echo Base_URL; ?>/images/Antigua.avif" alt="Antigua and Barbuda Flag" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="cbi-flag-placeholder" style="display: none; width: 80px; height: 60px; background: #E31E24; border-radius: 4px; position: relative;">
                         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5rem;">🇦🇬</div>
                     </div>
@@ -132,7 +132,7 @@ include __DIR__ . '/partials/header.php';
             <!-- Dominica -->
             <div class="cbi-country-card">
                 <div class="cbi-country-flag">
-                    <img src="<?php echo Base_URL; ?>/images/flags/dominica.png" alt="Dominica Flag" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <img src="<?php echo Base_URL; ?>/images/dominica.avif" alt="Dominica Flag" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="cbi-flag-placeholder" style="display: none; width: 80px; height: 60px; background: #006B3F; border-radius: 4px; position: relative;">
                         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5rem;">🇩🇲</div>
                     </div>
@@ -161,7 +161,7 @@ include __DIR__ . '/partials/header.php';
             <!-- Grenada -->
             <div class="cbi-country-card">
                 <div class="cbi-country-flag">
-                    <img src="<?php echo Base_URL; ?>/images/flags/grenada.png" alt="Grenada Flag" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <img src="<?php echo Base_URL; ?>/images/grenada.avif" alt="Grenada Flag" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="cbi-flag-placeholder" style="display: none; width: 80px; height: 60px; background: #CE1126; border-radius: 4px; position: relative;">
                         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5rem;">🇬🇩</div>
                     </div>
@@ -190,7 +190,7 @@ include __DIR__ . '/partials/header.php';
             <!-- St. Kitts and Nevis -->
             <div class="cbi-country-card">
                 <div class="cbi-country-flag">
-                    <img src="<?php echo Base_URL; ?>/images/flags/st-kitts-nevis.png" alt="St. Kitts and Nevis Flag" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <img src="<?php echo Base_URL; ?>/images/<?php echo rawurlencode('St_ Kitts.avif'); ?>" alt="St. Kitts and Nevis Flag" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="cbi-flag-placeholder" style="display: none; width: 80px; height: 60px; background: #009639; border-radius: 4px; position: relative;">
                         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5rem;">🇰🇳</div>
                     </div>
@@ -219,7 +219,7 @@ include __DIR__ . '/partials/header.php';
             <!-- St. Lucia -->
             <div class="cbi-country-card">
                 <div class="cbi-country-flag">
-                    <img src="<?php echo Base_URL; ?>/images/flags/st-lucia.png" alt="St. Lucia Flag" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <img src="<?php echo Base_URL; ?>/images/<?php echo rawurlencode('St_ Lucia.avif'); ?>" alt="St. Lucia Flag" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="cbi-flag-placeholder" style="display: none; width: 80px; height: 60px; background: #6BCDE8; border-radius: 4px; position: relative;">
                         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5rem;">🇱🇨</div>
                     </div>
